@@ -2,7 +2,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SHIRYON - Revolutionizing Your Gym Wardrobe</title>
+    <title>Revolutionizing Your Gym Wardrobe</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
       rel="stylesheet"
@@ -58,12 +58,6 @@
         border-radius: 8px;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         animation: moveImageRight 5s 2s forwards, logoShineEffect 2s forwards, rayOfLight 5s forwards;
-      }
-
-        100% {
-          transform: translateX(0);
-          opacity: 1;
-        }
       }
 
       @keyframes logoShineEffect {
