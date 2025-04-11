@@ -34,9 +34,9 @@
     }
 
     .intro-image {
-      max-width: 100%;
+      max-width: 120%;
       height: auto;
-      animation: zoomOut 6s ease forwards;
+      animation: zoomOut 8s ease forwards; /* Increased animation duration to 8s */
     }
 
     @keyframes zoomOut {
@@ -45,7 +45,7 @@
         opacity: 1;
       }
       100% {
-        transform: scale(1.1);
+        transform: scale(1.2); /* Increased image size */
         opacity: 0;
       }
     }
@@ -62,7 +62,7 @@
       font-weight: 700;
       color: white; /* White text for a clean, sleek look */
       opacity: 0;
-      animation: fadeInText 2s forwards 6s;
+      animation: fadeInText 2s forwards 8s; /* Animation starts after the image fades */
     }
 
     @keyframes fadeInText {
@@ -318,28 +318,26 @@
         <li>Charan A - Co-Founder | Operations Lead</li>
       </ul>
     </div>
-  </div>
 
-  <!-- Contact Section -->
-  <div class="contact-section">
-    <div class="contact-box">
-      <h3>Contact Us</h3>
-      <p>Interested in building the future of gymwear with us?</p>
-      <p>Email: <a href="mailto:founders@shiryon.in">founders@shiryon.in</a></p>
-    </div>
+    <div class="contact-section">
+      <div class="contact-box">
+        <h3>Contact Us</h3>
+        <p>Email: <a href="mailto:founders@shiryon.in">founders@shiryon.in</a></p>
+      </div>
 
-    <div class="form-box">
-      <h2>Get In Touch</h2>
-      <form name="detailsform" method="POST" action="https://formspree.io/f/xzzeyjpd">
-        <div class="name-fields">
-          <input type="text" name="first-name" placeholder="First Name" required />
-          <input type="text" name="last-name" placeholder="Last Name" required />
-        </div>
-        <input type="email" name="email" placeholder="Email Address" required />
-        <input type="tel" name="contact-number" placeholder="Contact Number" required />
-        <textarea name="message" placeholder="Message" required></textarea>
-        <button type="submit">Submit</button>
-      </form>
+      <div class="form-box">
+        <h2>Get In Touch</h2>
+        <form name="detailsform" method="POST" action="https://formspree.io/f/xzzeyjpd">
+          <div class="name-fields">
+            <input type="text" name="first-name" placeholder="First Name" required />
+            <input type="text" name="last-name" placeholder="Last Name" required />
+          </div>
+          <input type="email" name="email" placeholder="Email Address" required />
+          <input type="tel" name="contact-number" placeholder="Contact Number" required />
+          <textarea name="message" placeholder="Message" required></textarea>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
     </div>
   </div>
 
