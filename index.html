@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Revolutionizing Your Gym Wardrobe</title>
-  <!-- Google Fonts: Bebas Neue and Playfair Display -->
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     * {
@@ -22,7 +21,20 @@
       font-size: 18px;
     }
 
-    /* Hero Section for Image Animation */
+    /* Logo in Top-Left Corner */
+    .site-logo {
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      z-index: 200;
+    }
+
+    .site-logo img {
+      height: 50px;
+      width: auto;
+    }
+
+    /* Hero Section */
     .intro-section {
       height: 100vh;
       display: flex;
@@ -36,7 +48,7 @@
     .intro-image {
       max-width: 120%;
       height: auto;
-      animation: zoomOut 8s ease forwards; /* Increased animation duration to 8s */
+      animation: zoomOut 8s ease forwards;
     }
 
     @keyframes zoomOut {
@@ -45,12 +57,12 @@
         opacity: 1;
       }
       100% {
-        transform: scale(1.2); /* Increased image size */
+        transform: scale(1.2);
         opacity: 0;
       }
     }
 
-    /* Centered "Coming Soon" Text */
+    /* Coming Soon Text */
     .centered-text {
       position: absolute;
       top: 50%;
@@ -58,11 +70,15 @@
       transform: translate(-50%, -50%);
       text-align: center;
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 80px;
+      font-size: 50px;
       font-weight: 700;
-      color: white; /* White text for a clean, sleek look */
+      color: white;
       opacity: 0;
-      animation: fadeInText 2s forwards 8s; /* Animation starts after the image fades */
+      animation: fadeInText 1s forwards 8s; /* faster fade after image fades */
+    }
+
+    .centered-text p {
+      font-size: 24px;
     }
 
     @keyframes fadeInText {
@@ -80,7 +96,6 @@
       }
     }
 
-    /* Main header */
     .site-header {
       padding: 60px 80px;
       color: white;
@@ -106,7 +121,6 @@
       letter-spacing: 2px;
     }
 
-    /* Content Section */
     .content-wrapper {
       display: flex;
       flex-direction: column;
@@ -140,13 +154,12 @@
       margin-bottom: 30px;
     }
 
-    /* Contact Section */
     .contact-section {
-      margin-top: 50px;
+      margin-top: 30px;
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
-      gap: 30px;
+      gap: 0px;
     }
 
     .contact-box,
@@ -251,29 +264,82 @@
     }
 
     @media (max-width: 768px) {
+      .site-logo {
+        top: 15px;
+        left: 15px;
+      }
+
       .site-header {
-        padding: 40px;
+        padding: 30px 20px;
+        text-align: center;
       }
 
       .site-title h1 {
-        font-size: 50px;
+        font-size: 40px;
+      }
+
+      .site-title p {
+        font-size: 20px;
       }
 
       .content-wrapper {
-        padding: 30px;
+        padding: 20px;
+      }
+
+      .tagline {
+        font-size: 28px;
+      }
+
+      .quote {
+        font-size: 16px;
+      }
+
+      .strategy {
+        font-size: 18px;
+      }
+
+      .contact-section {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+        gap: 20px;
       }
 
       .contact-box,
       .form-box {
+        width: 100%;
         max-width: 100%;
-        margin: 10px;
+        padding: 30px;
+      }
+
+      .form-box h2 {
+        font-size: 24px;
+      }
+
+      input,
+      textarea {
+        font-size: 16px;
+      }
+
+      button {
+        font-size: 16px;
+      }
+
+      footer {
+        font-size: 16px;
+        text-align: center;
       }
     }
   </style>
 </head>
 
 <body>
-  <!-- Hero Section for Image Animation -->
+  <!-- Ferrari-style Top Logo -->
+  <div class="site-logo">
+    <img src="https://upload.wikimedia.org/wikipedia/en/9/9b/Ferrari-Logo.png" alt="Shiryon Logo" />
+  </div>
+
+  <!-- Hero Section -->
   <div class="intro-section">
     <img class="intro-image" src="https://i.postimg.cc/S2HvrdjX/IMG-4687.jpg" alt="Gym Fashion" />
   </div>
@@ -305,7 +371,7 @@
 
     <div class="strategy">
       <h3>What We’re Building</h3>
-      <p>SHIRYON is not another activewear label. We are creating a new category: Dedicated Gymwear—apparel engineered for squats, pulls, and presses. The global fitness apparel market (~$200 billion by 2028) is saturated—but strength-focused athletes remain overlooked.</p>
+      <p>SHIRYON is not another activewear label. We are creating a new category: Dedicated Gymwear—apparel engineered for squats, pulls, and presses.</p>
       <p>While yoga, running, and lifestyle segments dominate, the weight room has been left behind. SHIRYON fills that gap.</p>
 
       <h3>Our Strategy</h3>
