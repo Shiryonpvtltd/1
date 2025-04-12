@@ -29,7 +29,7 @@
 
     /* Text Styling */
     h1, h2, h3 {
-      font-size: 3em;
+      font-size: 2.5em;
       margin-bottom: 20px;
     }
 
@@ -67,6 +67,7 @@
     .intro-image {
       max-width: 120%;
       height: auto;
+      display: none; /* Initially hidden */
       animation: zoomOut 8s ease forwards;
     }
 
@@ -89,7 +90,7 @@
       transform: translate(-50%, -50%);
       text-align: center;
       font-family: 'Ferro Rosso', sans-serif;
-      font-size: 50px;
+      font-size: 30px; /* Reduced size */
       font-weight: 700;
       color: blue; /* Blue color for the text */
       opacity: 0;
@@ -158,7 +159,7 @@
 
     .tagline {
       font-family: 'Ferro Rosso', sans-serif;
-      font-size: 40px;
+      font-size: 30px;
       font-weight: 700;
       text-align: center;
       color: white;
@@ -322,8 +323,9 @@
 
   <!-- Centered "Coming Soon" Text -->
   <div class="centered-text">
-    <h1>SHIRYON</h1>
     <p>Coming Soon</p>
+    <h1>SHIRYON</h1>
+    <p>We saw the gap no one did.</p>
   </div>
 
   <!-- Main Header -->
@@ -391,13 +393,11 @@
   </footer>
 
   <script>
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.slide');
-
-    function nextSlide(slideIndex) {
-      slides[currentSlide].classList.remove('active');
-      currentSlide = slideIndex;
-      slides[currentSlide].classList.add('active');
+    // Delay displaying the image after the animation
+    window.onload = function() {
+      setTimeout(function() {
+        document.querySelector('.intro-image').style.display = 'block';
+      }, 8000); // Show image after 8 seconds
     }
   </script>
 
