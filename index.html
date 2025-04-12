@@ -3,38 +3,57 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Revolutionizing Your Gym Wardrobe</title>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <title>SHIRYON | Revolutionizing Gymwear</title>
+  <link href="https://fonts.googleapis.com/css2?family=Ferro+Rosso&display=swap" rel="stylesheet" />
   <style>
-    * {
+    /* Global Styles */
+    body {
+      font-family: 'Ferro Rosso', sans-serif;
+      background-color: #111;
+      color: white;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Playfair Display', serif;
-      background: #111;
-      color: white;
-      line-height: 1.6;
       overflow-x: hidden;
-      font-size: 18px;
     }
 
-    /* Logo in Top-Left Corner */
-    .site-logo {
-      position: absolute;
-      top: 30px;
-      left: 30px;
-      z-index: 200;
+    /* Slide Styles */
+    .slide {
+      display: none;
+      padding: 60px 80px;
+      text-align: center;
     }
 
-    .site-logo img {
-      height: 50px;
-      width: auto;
+    .active {
+      display: block;
     }
 
-    /* Hero Section */
+    /* Text Styling */
+    h1, h2, h3 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.5em;
+      line-height: 1.6;
+    }
+
+    /* Button Styling */
+    .next-btn {
+      background-color: #5ecbff;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      cursor: pointer;
+      margin-top: 20px;
+      border-radius: 5px;
+    }
+
+    .next-btn:hover {
+      background-color: #3ca6ff;
+    }
+
+    /* Hero Section for Image Animation */
     .intro-section {
       height: 100vh;
       display: flex;
@@ -62,23 +81,19 @@
       }
     }
 
-    /* Coming Soon Text */
+    /* Centered "Coming Soon" Text */
     .centered-text {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       text-align: center;
-      font-family: 'Bebas Neue', sans-serif;
+      font-family: 'Ferro Rosso', sans-serif;
       font-size: 50px;
       font-weight: 700;
-      color: white;
+      color: blue; /* Blue color for the text */
       opacity: 0;
-      animation: fadeInText 1s forwards 8s; /* faster fade after image fades */
-    }
-
-    .centered-text p {
-      font-size: 24px;
+      animation: fadeInText 2s forwards 8s;
     }
 
     @keyframes fadeInText {
@@ -96,24 +111,30 @@
       }
     }
 
+    /* Main header */
     .site-header {
-      padding: 60px 80px;
+      padding: 20px 80px;
       color: white;
-      text-align: left;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
       z-index: 100;
-      position: relative;
     }
 
     .site-title h1 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 80px;
+      font-family: 'Ferro Rosso', sans-serif;
+      font-size: 40px;
       font-weight: 700;
       margin-bottom: 10px;
       color: white;
     }
 
     .site-title p {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Ferro Rosso', sans-serif;
       font-size: 28px;
       font-weight: 700;
       color: white;
@@ -121,6 +142,12 @@
       letter-spacing: 2px;
     }
 
+    .site-header img {
+      width: 80px; /* Smaller logo size */
+      height: auto;
+    }
+
+    /* Content Wrapper */
     .content-wrapper {
       display: flex;
       flex-direction: column;
@@ -130,7 +157,7 @@
     }
 
     .tagline {
-      font-family: 'Bebas Neue', sans-serif;
+      font-family: 'Ferro Rosso', sans-serif;
       font-size: 40px;
       font-weight: 700;
       text-align: center;
@@ -154,12 +181,13 @@
       margin-bottom: 30px;
     }
 
+    /* Contact Section */
     .contact-section {
-      margin-top: 30px;
+      margin-top: 50px;
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
-      gap: 0px;
+      gap: 30px;
     }
 
     .contact-box,
@@ -173,7 +201,7 @@
     }
 
     .contact-box h3 {
-      color: #ff4d4d;
+      color: #00b0ff; /* Blue color for heading */
       margin-bottom: 20px;
       font-size: 28px;
     }
@@ -182,6 +210,7 @@
       font-size: 18px;
       line-height: 1.8;
       margin-bottom: 20px;
+      color: #00b0ff; /* Blue color for text */
     }
 
     .form-box {
@@ -190,7 +219,7 @@
 
     .form-box h2 {
       text-align: center;
-      color: #ff4d4d;
+      color: #00b0ff; /* Blue color for heading */
       margin-bottom: 30px;
       font-size: 30px;
     }
@@ -221,7 +250,7 @@
       border-radius: 10px;
       font-size: 18px;
       background-color: #333;
-      color: #fff;
+      color: #00b0ff; /* Blue text for inputs */
     }
 
     textarea {
@@ -231,7 +260,7 @@
 
     button {
       padding: 15px;
-      background: linear-gradient(to right, #ff4d4d, #ff7b7b);
+      background: linear-gradient(to right, #00b0ff, #3399ff);
       color: white;
       border: none;
       border-radius: 10px;
@@ -241,7 +270,7 @@
     }
 
     button:hover {
-      background: linear-gradient(to right, #e63a3a, #f03f3f);
+      background: linear-gradient(to right, #0082b3, #1e6e8e);
     }
 
     footer {
@@ -264,82 +293,29 @@
     }
 
     @media (max-width: 768px) {
-      .site-logo {
-        top: 15px;
-        left: 15px;
-      }
-
       .site-header {
-        padding: 30px 20px;
-        text-align: center;
+        padding: 40px;
       }
 
       .site-title h1 {
-        font-size: 40px;
-      }
-
-      .site-title p {
-        font-size: 20px;
+        font-size: 50px;
       }
 
       .content-wrapper {
-        padding: 20px;
-      }
-
-      .tagline {
-        font-size: 28px;
-      }
-
-      .quote {
-        font-size: 16px;
-      }
-
-      .strategy {
-        font-size: 18px;
-      }
-
-      .contact-section {
-        flex-direction: column;
-        align-items: center;
-        margin-top: 20px;
-        gap: 20px;
+        padding: 30px;
       }
 
       .contact-box,
       .form-box {
-        width: 100%;
         max-width: 100%;
-        padding: 30px;
-      }
-
-      .form-box h2 {
-        font-size: 24px;
-      }
-
-      input,
-      textarea {
-        font-size: 16px;
-      }
-
-      button {
-        font-size: 16px;
-      }
-
-      footer {
-        font-size: 16px;
-        text-align: center;
+        margin: 10px;
       }
     }
   </style>
 </head>
-
 <body>
-  <!-- Ferrari-style Top Logo -->
-  <div class="site-logo">
-    <img src="https://upload.wikimedia.org/wikipedia/en/9/9b/Ferrari-Logo.png" alt="Shiryon Logo" />
-  </div>
 
-  <!-- Hero Section -->
+  <!-- Hero Section for Image Animation -->
   <div class="intro-section">
     <img class="intro-image" src="https://i.postimg.cc/S2HvrdjX/IMG-4687.jpg" alt="Gym Fashion" />
   </div>
@@ -352,6 +328,7 @@
 
   <!-- Main Header -->
   <div class="site-header">
+    <img src="https://i.postimg.cc/S2HvrdjX/IMG-4687.jpg" alt="Shiryon Logo" />
     <div class="site-title">
       <h1>SHIRYON</h1>
       <p>Revolutionizing your gym wardrobe</p>
@@ -371,7 +348,7 @@
 
     <div class="strategy">
       <h3>What We’re Building</h3>
-      <p>SHIRYON is not another activewear label. We are creating a new category: Dedicated Gymwear—apparel engineered for squats, pulls, and presses.</p>
+      <p>SHIRYON is not another activewear label. We are creating a new category: Dedicated Gymwear—apparel engineered for squats, pulls, and presses. The global fitness apparel market (~$200 billion by 2028) is saturated—but strength-focused athletes remain overlooked.</p>
       <p>While yoga, running, and lifestyle segments dominate, the weight room has been left behind. SHIRYON fills that gap.</p>
 
       <h3>Our Strategy</h3>
@@ -412,5 +389,17 @@
     <p>SHIRYON TEXTILES PVT LTD,</p>
     <p>Plot 326, First floor, TNGO’s colony phase 2, Gachibowli, Hyderabad, India, 500032.</p>
   </footer>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function nextSlide(slideIndex) {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = slideIndex;
+      slides[currentSlide].classList.add('active');
+    }
+  </script>
+
 </body>
 </html>
