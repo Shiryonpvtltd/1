@@ -58,7 +58,7 @@
       position: absolute;
       top: 50%;  /* Adjusts position of the text */
       left: 50%;
-      transform: translate(-50%, 20%); /* Moves it below "Coming Soon" */
+      transform: translate(-50%, -50%); /* Move it to the center of the screen */
       text-align: center;
       font-family: 'Bebas Neue', sans-serif;
       opacity: 0;
@@ -79,7 +79,7 @@
     @keyframes fadeInText {
       to {
         opacity: 1;
-        transform: translate(-50%, 20%) scale(1);
+        transform: translate(-50%, -50%) scale(1);
       }
     }
 
@@ -240,10 +240,12 @@
   <!-- Animation Section -->
   <div class="intro-section">
     <img class="intro-image" src="https://i.postimg.cc/S2HvrdjX/IMG-4687.jpg" alt="Gym Fashion" />
-    <div class="centered-text">
-      <h1>SHIRYON</h1>
-      <p>Coming Soon</p>
-    </div>
+  </div>
+
+  <!-- Text Section Above 'What We’re Building' -->
+  <div class="centered-text">
+    <h1>SHIRYON</h1>
+    <p>Coming Soon</p>
   </div>
 
   <!-- Post Animation Title and Tagline -->
