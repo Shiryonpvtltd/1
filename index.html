@@ -57,12 +57,14 @@
     .centered-text {
       position: absolute;
       top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
+      right: 20px; /* Move text closer to the right */
+      transform: translateY(-50%);
+      text-align: right; /* Align text to the right */
       font-family: 'Bebas Neue', sans-serif;
       opacity: 0;
       animation: fadeInText 1s ease forwards 4s;
+      width: 70%;  /* Adjust width to prevent overflow */
+      max-width: 800px; /* Adjust max-width */
     }
 
     .centered-text h1 {
@@ -78,7 +80,7 @@
     @keyframes fadeInText {
       to {
         opacity: 1;
-        transform: translate(-50%, -50%) scale(1);
+        transform: translateY(-50%) scale(1);
       }
     }
 
@@ -86,7 +88,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: flex-start;
+      align-items: center;
       margin-top: 30px;
       padding: 0 20px;
       animation: fadeInText 1s ease forwards 4s;
@@ -97,6 +99,7 @@
       font-family: 'Bebas Neue', sans-serif;
       font-size: 50px;
       margin-bottom: 10px;
+      text-align: center;
     }
 
     .tagline-title {
@@ -104,6 +107,7 @@
       font-style: italic;
       margin-bottom: 20px;
       color: #ccc;
+      text-align: center;
       line-height: 1.4;
     }
 
@@ -112,6 +116,7 @@
       margin-bottom: 40px;
       font-weight: 300;
       color: #999;
+      text-align: center;
     }
 
     .content-wrapper {
@@ -220,10 +225,7 @@
       .centered-text p { font-size: 20px; }
       .main-title { font-size: 36px; }
       .tagline-title { font-size: 18px; }
-    }
-
-    .tagline-right {
-      text-align: left;
+      .subheadline { font-size: 16px; }
     }
 
     .large-slide {
@@ -248,8 +250,8 @@
   <!-- Post Animation Title and Tagline -->
   <div class="post-header">
     <h1 class="main-title">SHIRYON</h1>
-    <p class="tagline-title tagline-right">Revolutionizing your gym wardrobe</p>
-    <p class="subheadline tagline-right">We saw the gap no one did.</p>
+    <p class="tagline-title">Revolutionizing your gym wardrobe</p>
+    <p class="subheadline">We saw the gap no one did.</p>
   </div>
 
   <!-- Content Section -->
