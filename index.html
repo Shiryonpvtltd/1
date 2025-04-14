@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SHIRYON | Revolutionizing Gymwear</title>
 
-  <!-- Ferrari-like Font (Orbitron) -->
+  <!-- Ferrari-style Font -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
 
   <style>
@@ -41,10 +41,11 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: #000;
+      background: linear-gradient(to bottom, #000000, #111111, #1a1a1a);
       position: relative;
       overflow: hidden;
       flex-direction: column;
+      padding: 40px 20px;
     }
 
     .intro-image {
@@ -60,7 +61,7 @@
 
     .centered-text {
       position: absolute;
-      top: 20%; /* Moved up */
+      top: 18%;
       left: 50%;
       transform: translate(-50%, -50%);
       text-align: center;
@@ -89,8 +90,34 @@
       }
     }
 
+    /* COMING SOON Animation */
+    .coming-soon {
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 22px;
+      font-weight: 700;
+      color: #00b0ff;
+      animation: fadeUp 2s ease-out forwards 5s;
+      opacity: 0;
+      letter-spacing: 1.5px;
+      text-align: center;
+    }
+
+    @keyframes fadeUp {
+      0% {
+        transform: translate(-50%, -20%);
+        opacity: 0;
+      }
+      100% {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+      }
+    }
+
     .post-header {
-      display: none; /* Removed old SHIRYON & tagline */
+      display: none;
     }
 
     .main-title {
@@ -234,13 +261,14 @@
   <!-- Logo -->
   <img class="logo" src="https://i.postimg.cc/S2HvrdjX/IMG-4687.jpg" alt="SHIRYON Logo" />
 
-  <!-- Intro Section with Updated Title & Tagline -->
+  <!-- Intro Section -->
   <div class="intro-section">
     <img class="intro-image" src="https://i.postimg.cc/S2HvrdjX/IMG-4687.jpg" alt="Gym Fashion" />
     <div class="centered-text">
       <h1>SHIRYON</h1>
       <p>Revolutionizing your gym wardrobe</p>
     </div>
+    <div class="coming-soon">SHIRYON — Coming Soon</div>
   </div>
 
   <!-- Content -->
