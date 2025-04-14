@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SHIRYON | Revolutionizing Gymwear</title>
 
-  <!-- Ferrari-style Font -->
+  <!-- Ferrari-style Orbitron Font -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
 
   <style>
@@ -44,14 +44,19 @@
       background: linear-gradient(to bottom, #000000, #111111, #1a1a1a);
       position: relative;
       overflow: hidden;
-      flex-direction: column;
-      padding: 40px 20px;
     }
 
     .intro-image {
       max-width: 120%;
       height: auto;
       animation: zoomOut 4s ease forwards;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.15;
     }
 
     @keyframes zoomOut {
@@ -60,88 +65,51 @@
     }
 
     .centered-text {
-      position: absolute;
-      top: 18%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      position: relative;
+      z-index: 2;
       text-align: center;
-      font-family: 'Orbitron', sans-serif;
-      opacity: 0;
       animation: fadeInText 1s ease forwards 4s;
-      width: 100%;
+      opacity: 0;
     }
 
     .centered-text h1 {
       font-size: 60px;
       margin-bottom: 10px;
       letter-spacing: 2px;
+      color: #fff;
     }
 
     .centered-text p {
       font-size: 26px;
       color: #aaa;
-      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+
+    .coming-soon {
+      font-size: 22px;
+      font-weight: 700;
+      color: #00b0ff;
+      animation: fadeUp 1.5s ease-out forwards 5.5s;
+      opacity: 0;
+      letter-spacing: 1.5px;
     }
 
     @keyframes fadeInText {
       to {
         opacity: 1;
-        transform: translate(-50%, -50%) scale(1);
+        transform: scale(1);
       }
-    }
-
-    /* COMING SOON Animation */
-    .coming-soon {
-      position: absolute;
-      top: 30%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 22px;
-      font-weight: 700;
-      color: #00b0ff;
-      animation: fadeUp 2s ease-out forwards 5s;
-      opacity: 0;
-      letter-spacing: 1.5px;
-      text-align: center;
     }
 
     @keyframes fadeUp {
-      0% {
-        transform: translate(-50%, -20%);
+      from {
+        transform: translateY(10px);
         opacity: 0;
       }
-      100% {
-        transform: translate(-50%, -50%);
+      to {
+        transform: translateY(0);
         opacity: 1;
       }
-    }
-
-    .post-header {
-      display: none;
-    }
-
-    .main-title {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 50px;
-      margin-bottom: 10px;
-      text-align: center;
-    }
-
-    .tagline-title {
-      font-size: 24px;
-      font-style: italic;
-      margin-bottom: 20px;
-      color: #ccc;
-      text-align: center;
-      line-height: 1.4;
-    }
-
-    .subheadline {
-      font-size: 18px;
-      margin-bottom: 40px;
-      font-weight: 300;
-      color: #999;
-      text-align: center;
     }
 
     .content-wrapper {
@@ -152,7 +120,6 @@
     }
 
     .slide-section h2 {
-      font-family: 'Orbitron', sans-serif;
       font-size: 40px;
       margin-bottom: 20px;
       text-align: center;
@@ -248,7 +215,7 @@
     @media (max-width: 768px) {
       .centered-text h1 { font-size: 32px; }
       .centered-text p { font-size: 20px; }
-      .main-title { font-size: 36px; }
+      .coming-soon { font-size: 18px; }
     }
 
     .large-slide {
@@ -267,8 +234,8 @@
     <div class="centered-text">
       <h1>SHIRYON</h1>
       <p>Revolutionizing your gym wardrobe</p>
+      <div class="coming-soon">SHIRYON — Coming Soon</div>
     </div>
-    <div class="coming-soon">SHIRYON — Coming Soon</div>
   </div>
 
   <!-- Content -->
