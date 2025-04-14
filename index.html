@@ -55,6 +55,7 @@
       object-fit: contain;
       animation: zoomOut 4s ease forwards;
       opacity: 0.8; /* Reduced opacity for softer effect */
+      animation-delay: 2s; /* Delay the zoom out to match the logo animation */
     }
 
     @keyframes zoomOut {
@@ -66,8 +67,8 @@
       position: relative;
       z-index: 2;
       text-align: center;
-      animation: fadeInText 1s ease forwards 4s;
       opacity: 0;
+      animation: fadeInText 1s ease forwards 4s; /* Fade text in after the image */
     }
 
     .centered-text h1 {
@@ -228,7 +229,10 @@
 
   <!-- Intro Section -->
   <div class="intro-section">
+    <!-- Image will be shown initially, but it's removed after animation -->
     <img class="intro-image" src="https://i.postimg.cc/S2HvrdjX/IMG-4687.jpg" alt="Gym Fashion" />
+    
+    <!-- Text will fade in after the logo animation -->
     <div class="centered-text">
       <h1>SHIRYON</h1>
       <p class="tagline">Revolutionizing your gym wardrobe</p>
