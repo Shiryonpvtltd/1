@@ -4,7 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SHIRYON | Revolutionizing Gymwear</title>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Ferrari-like Font (Orbitron) -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
+
   <style>
     * {
       margin: 0;
@@ -13,7 +16,7 @@
     }
 
     body {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Orbitron', sans-serif;
       background-color: #111;
       color: white;
       overflow-x: hidden;
@@ -41,6 +44,7 @@
       background-color: #000;
       position: relative;
       overflow: hidden;
+      flex-direction: column;
     }
 
     .intro-image {
@@ -56,11 +60,11 @@
 
     .centered-text {
       position: absolute;
-      top: 50%;  /* Adjusts position of the text */
+      top: 20%; /* Moved up */
       left: 50%;
-      transform: translate(-50%, -50%); /* Move it to the center of the screen */
+      transform: translate(-50%, -50%);
       text-align: center;
-      font-family: 'Bebas Neue', sans-serif;
+      font-family: 'Orbitron', sans-serif;
       opacity: 0;
       animation: fadeInText 1s ease forwards 4s;
       width: 100%;
@@ -69,11 +73,13 @@
     .centered-text h1 {
       font-size: 60px;
       margin-bottom: 10px;
+      letter-spacing: 2px;
     }
 
     .centered-text p {
-      font-size: 40px;
-      margin-bottom: 30px;
+      font-size: 26px;
+      color: #aaa;
+      letter-spacing: 1px;
     }
 
     @keyframes fadeInText {
@@ -84,18 +90,11 @@
     }
 
     .post-header {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      margin-top: 30px;
-      padding: 0 20px;
-      animation: fadeInText 1s ease forwards 4s;
-      opacity: 0;
+      display: none; /* Removed old SHIRYON & tagline */
     }
 
     .main-title {
-      font-family: 'Bebas Neue', sans-serif;
+      font-family: 'Orbitron', sans-serif;
       font-size: 50px;
       margin-bottom: 10px;
       text-align: center;
@@ -126,7 +125,7 @@
     }
 
     .slide-section h2 {
-      font-family: 'Bebas Neue', sans-serif;
+      font-family: 'Orbitron', sans-serif;
       font-size: 40px;
       margin-bottom: 20px;
       text-align: center;
@@ -223,8 +222,6 @@
       .centered-text h1 { font-size: 32px; }
       .centered-text p { font-size: 20px; }
       .main-title { font-size: 36px; }
-      .tagline-title { font-size: 18px; }
-      .subheadline { font-size: 16px; }
     }
 
     .large-slide {
@@ -234,28 +231,19 @@
 </head>
 <body>
 
-  <!-- Logo (Appears after animation) -->
+  <!-- Logo -->
   <img class="logo" src="https://i.postimg.cc/S2HvrdjX/IMG-4687.jpg" alt="SHIRYON Logo" />
 
-  <!-- Animation Section -->
+  <!-- Intro Section with Updated Title & Tagline -->
   <div class="intro-section">
     <img class="intro-image" src="https://i.postimg.cc/S2HvrdjX/IMG-4687.jpg" alt="Gym Fashion" />
+    <div class="centered-text">
+      <h1>SHIRYON</h1>
+      <p>Revolutionizing your gym wardrobe</p>
+    </div>
   </div>
 
-  <!-- Text Section Above 'What We’re Building' -->
-  <div class="centered-text">
-    <h1>SHIRYON</h1>
-    <p>Coming Soon</p>
-  </div>
-
-  <!-- Post Animation Title and Tagline -->
-  <div class="post-header">
-    <h1 class="main-title">SHIRYON</h1>
-    <p class="tagline-title">Revolutionizing your gym wardrobe</p>
-    <p class="subheadline">We saw the gap no one did.</p>
-  </div>
-
-  <!-- Content Section -->
+  <!-- Content -->
   <div class="content-wrapper">
     <section class="slide-section large-slide">
       <h2>What We’re Building</h2>
