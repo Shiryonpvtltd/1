@@ -22,23 +22,24 @@
       overflow-x: hidden;
     }
 
+    /* Ferrari-style Logo Animation */
     .logo {
       position: fixed;
       top: 20px;
       left: 20px;
       width: 90px;
       opacity: 0;
-      animation: logoZoomIn 2s ease forwards 2s; /* Animation added */
+      animation: logoZoomIn 2s ease forwards 2s;
       z-index: 10;
     }
 
-    /* Ferrari-style Logo Animation */
     @keyframes logoZoomIn {
       0% { transform: scale(0); opacity: 0; }
-      50% { transform: scale(1.2); opacity: 1; }
+      50% { transform: scale(1.5); opacity: 1; }
       100% { transform: scale(1); opacity: 1; }
     }
 
+    /* Ferrari-style Image Animation */
     .intro-section {
       height: 100vh;
       display: flex;
@@ -52,23 +53,34 @@
     .intro-image {
       width: 100%;
       height: 100%;
-      object-fit: contain;
-      animation: zoomOut 4s ease forwards;
-      opacity: 0.8; /* Reduced opacity for softer effect */
-      animation-delay: 2s; /* Delay the zoom out to match the logo animation */
+      object-fit: cover;
+      animation: ferrariZoomInOut 4s ease-in-out forwards;
+      opacity: 0.8;
+      animation-delay: 2s;
     }
 
-    @keyframes zoomOut {
-      0% { transform: scale(1); opacity: 1; }
-      100% { transform: scale(1.02); opacity: 0.7; }
+    @keyframes ferrariZoomInOut {
+      0% { 
+        transform: scale(1.2) translateX(-20%); 
+        opacity: 1; 
+      }
+      50% { 
+        transform: scale(1) translateX(0); 
+        opacity: 1; 
+      }
+      100% { 
+        transform: scale(1.1) translateX(20%);
+        opacity: 0;
+      }
     }
 
+    /* Text Animation */
     .centered-text {
-      position: relative;
+      position: absolute;
       z-index: 2;
       text-align: center;
       opacity: 0;
-      animation: fadeInText 1s ease forwards 4s; /* Fade text in after the image */
+      animation: fadeInText 1s ease forwards 4s;
     }
 
     .centered-text h1 {
@@ -232,7 +244,7 @@
     <!-- Image will be shown initially, but it's removed after animation -->
     <img class="intro-image" src="https://i.postimg.cc/S2HvrdjX/IMG-4687.jpg" alt="Gym Fashion" />
     
-    <!-- Text will fade in after the logo animation -->
+    <!-- Text will fade in after the image animation -->
     <div class="centered-text">
       <h1>SHIRYON</h1>
       <p class="tagline">Revolutionizing your gym wardrobe</p>
