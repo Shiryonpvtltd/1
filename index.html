@@ -39,8 +39,9 @@
       overflow: hidden;
     }
 
+    /* Initially the image replaces the SHIRYON text */
     .intro-image {
-      width: 40%; /* Make the image smaller */
+      width: 40%; /* Smaller image size */
       height: auto;
       object-fit: cover;
       position: absolute;
@@ -57,21 +58,22 @@
         opacity: 1;
       }
       60% {
-        transform: scale(1.05); /* Slight zoom for the Ferrari-like effect */
+        transform: scale(1.05);
         opacity: 1;
       }
       100% {
-        transform: scale(1.1); /* Final zoom effect */
+        transform: scale(1.1);
         opacity: 0;
       }
     }
 
+    /* Hide SHIRYON text initially */
     .centered-text {
       position: absolute;
       z-index: 2;
       text-align: center;
       opacity: 0;
-      animation: fadeInText 2s ease-in 4s forwards;
+      animation: fadeInText 2s ease-in 5s forwards;
     }
 
     @keyframes fadeInText {
@@ -231,6 +233,7 @@
   <!-- Intro Section -->
   <div class="intro-section">
     <img class="intro-image" src="https://i.postimg.cc/S2HvrdjX/IMG-4687.jpg" alt="Gym Fashion" />
+    <!-- Centered text will be shown after the animation -->
     <div class="centered-text">
       <h1>SHIRYON</h1>
       <p class="tagline">Revolutionizing your gym wardrobe</p>
