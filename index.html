@@ -109,7 +109,7 @@
     }
 
     .slide-section {
-      height: 100vh;
+      height: auto;
       padding: 50px 30px;
       display: flex;
       flex-direction: column;
@@ -118,12 +118,38 @@
       gap: 30px;
     }
 
+    /* Numbering Style with Silver Line Above */
     .slide-section h2 {
       font-size: 42px;
       color: #ffffff;
       font-weight: bold;
       text-shadow: 0 0 8px rgba(0, 176, 255, 0.4);
       letter-spacing: 1px;
+      position: relative;
+      padding-left: 50px;
+      margin-top: 50px;
+    }
+
+    .slide-section h2::before {
+      content: attr(data-number);
+      position: absolute;
+      left: 0;
+      top: -20px;
+      font-size: 60px;
+      font-weight: bold;
+      color: silver;
+      z-index: 1;
+    }
+
+    .slide-section h2::after {
+      content: "";
+      position: absolute;
+      left: 50px;
+      top: -10px;
+      width: 100%;
+      height: 3px;
+      background-color: silver;
+      z-index: 0;
     }
 
     .slide-section p,
@@ -244,18 +270,18 @@
   <!-- Content -->
   <div class="content-wrapper">
     <section class="slide-section">
-      <h2>What We’re Building</h2>
+      <h2 data-number="1">What We’re Building</h2>
       <p>SHIRYON is not another activewear label. We are creating a new category: Dedicated Gymwear—apparel engineered for squats, pulls, and presses. The global fitness apparel market (~$200 billion by 2028) is saturated—but strength-focused athletes remain overlooked.</p>
       <p>While yoga, running, and lifestyle segments dominate, the weight room has been left behind. SHIRYON fills that gap.</p>
     </section>
 
     <section class="slide-section">
-      <h2>Our Strategy</h2>
+      <h2 data-number="2">Our Strategy</h2>
       <p><i>“Our unfair advantage is how we see.”</i><br>We don’t copy models. We create them—with storytelling, design intelligence, and strategic restraint.</p>
     </section>
 
     <section class="slide-section pillars">
-      <h2>Three Pillars</h2>
+      <h2 data-number="3">Three Pillars</h2>
       <ul>
         <li><strong>Product Development:</strong> Prototyping with award-winning industrial design firms from Poland.</li>
         <li><strong>Jedidya Raju</strong> – Founder | Vision Lead – A product thinker with a storyteller’s instinct.</li>
@@ -265,7 +291,7 @@
     </section>
 
     <section class="slide-section">
-      <h2>Contact</h2>
+      <h2 data-number="4">Contact</h2>
       <p>Let’s Build the Future of Gymwear.<br>Whether you’re an investor, collaborator, strategic advisor, or just curious—we’d love to connect.</p>
       <div class="contact-section">
         <div class="contact-box">
