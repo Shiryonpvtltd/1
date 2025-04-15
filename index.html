@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SHIRYON | Revolutionizing Gymwear</title>
 
-  <!-- Ferrari-style Orbitron Font -->
+  <!-- Orbitron Font (Ferrari-style) -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
 
   <style>
@@ -22,7 +22,7 @@
       overflow-x: hidden;
     }
 
-    /* Ferrari-style Logo Animation */
+    /* Logo Animation */
     .logo {
       position: fixed;
       top: 20px;
@@ -39,7 +39,7 @@
       100% { transform: scale(1); opacity: 1; }
     }
 
-    /* Ferrari-style Intro Section */
+    /* Intro Section */
     .intro-section {
       height: 100vh;
       display: flex;
@@ -52,7 +52,7 @@
 
     .intro-image {
       width: 100%;
-      height: 100%;
+      height: 60vh; /* Ferrari-style reduced height */
       object-fit: cover;
       animation: ferrariZoomPan 5s cubic-bezier(0.33, 1, 0.68, 1), hideImage 0.1s linear 5s forwards;
       opacity: 0.9;
@@ -95,7 +95,7 @@
       }
     }
 
-    /* Text Animation */
+    /* Centered Text Over Intro */
     .centered-text {
       position: absolute;
       z-index: 2;
@@ -151,10 +151,15 @@
       gap: 50px;
     }
 
+    /* Bold, bright headers */
     .slide-section h2 {
-      font-size: 40px;
+      font-size: 42px;
       margin-bottom: 20px;
       text-align: center;
+      color: #ffffff;
+      font-weight: 800;
+      text-shadow: 0 0 8px rgba(0, 176, 255, 0.4);
+      letter-spacing: 1px;
     }
 
     .slide-section p {
