@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SHIRYON | Revolutionizing Gymwear</title>
 
-  <!-- Orbitron Font (Ferrari-style) -->
+  <!-- Ferrari-style Orbitron Font -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
 
   <style>
@@ -22,7 +22,6 @@
       overflow-x: hidden;
     }
 
-    /* Logo Animation */
     .logo {
       position: fixed;
       top: 20px;
@@ -39,7 +38,6 @@
       100% { transform: scale(1); opacity: 1; }
     }
 
-    /* Intro Section */
     .intro-section {
       height: 100vh;
       display: flex;
@@ -52,50 +50,42 @@
 
     .intro-image {
       width: 100%;
-      height: 60vh; /* Ferrari-style reduced height */
+      height: 60vh;
       object-fit: cover;
-      animation: ferrariZoomPan 5s cubic-bezier(0.33, 1, 0.68, 1), hideImage 0.1s linear 5s forwards;
-      opacity: 0.9;
-      filter: brightness(1.05);
-      transform-origin: center;
-      animation-fill-mode: forwards;
       position: absolute;
       top: 0;
       left: 0;
+      opacity: 0.95;
+      filter: brightness(1.1);
       z-index: 1;
+      animation: ferrariZoomPan 5s ease-in-out forwards, hideImage 0s linear 5s forwards;
     }
 
     @keyframes ferrariZoomPan {
       0% {
-        transform: scale(1.2) translateX(-10%) translateY(0);
-        opacity: 0;
-        filter: brightness(0.8) blur(1px);
-      }
-      25% {
+        transform: scale(1.1) translateX(-10%);
         opacity: 1;
         filter: brightness(1) blur(0px);
       }
       50% {
-        transform: scale(1.05) translateX(0%) translateY(-1%);
-      }
-      75% {
-        transform: scale(1.1) translateX(10%) translateY(1%);
+        transform: scale(1.15) translateX(0%);
+        opacity: 1;
+        filter: brightness(1.05) blur(0px);
       }
       100% {
-        transform: scale(1.15) translateX(20%) translateY(0%);
+        transform: scale(1.2) translateX(10%);
         opacity: 0;
-        filter: brightness(1) blur(1px);
+        filter: blur(2px);
       }
     }
 
     @keyframes hideImage {
       to {
-        display: none;
         visibility: hidden;
+        display: none;
       }
     }
 
-    /* Centered Text Over Intro */
     .centered-text {
       position: absolute;
       z-index: 2;
@@ -151,7 +141,6 @@
       gap: 50px;
     }
 
-    /* Bold, bright headers */
     .slide-section h2 {
       font-size: 42px;
       margin-bottom: 20px;
@@ -267,10 +256,7 @@
 
   <!-- Intro Section -->
   <div class="intro-section">
-    <!-- Ferrari-style animated image -->
     <img class="intro-image" src="https://i.postimg.cc/S2HvrdjX/IMG-4687.jpg" alt="Gym Fashion" />
-
-    <!-- Text overlay -->
     <div class="centered-text">
       <h1>SHIRYON</h1>
       <p class="tagline">Revolutionizing your gym wardrobe</p>
