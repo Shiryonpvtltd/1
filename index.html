@@ -39,35 +39,24 @@
       overflow: hidden;
     }
 
-    /* Initially the image replaces the SHIRYON text */
     .intro-image {
-      width: 40%; /* Smaller image size */
+      width: 40%;
       height: auto;
       object-fit: cover;
       position: absolute;
-      top: 50%;
-      left: 50%;
+      top: 45%;
+      left: 45%;
       transform: translate(-50%, -50%);
       z-index: 1;
       animation: zoomFade 5s ease-in-out forwards;
     }
 
     @keyframes zoomFade {
-      0% {
-        transform: scale(1);
-        opacity: 1;
-      }
-      60% {
-        transform: scale(1.05);
-        opacity: 1;
-      }
-      100% {
-        transform: scale(1.1);
-        opacity: 0;
-      }
+      0% { transform: scale(1); opacity: 1; }
+      60% { transform: scale(1.05); opacity: 1; }
+      100% { transform: scale(1.1); opacity: 0; }
     }
 
-    /* Hide SHIRYON text initially */
     .centered-text {
       position: absolute;
       z-index: 2;
@@ -77,9 +66,7 @@
     }
 
     @keyframes fadeInText {
-      to {
-        opacity: 1;
-      }
+      to { opacity: 1; }
     }
 
     .centered-text h1 {
@@ -118,7 +105,6 @@
       gap: 30px;
     }
 
-    /* Numbering Style with Silver Line Above */
     .slide-section h2 {
       font-size: 42px;
       color: #ffffff;
@@ -146,7 +132,7 @@
       position: absolute;
       left: 50px;
       top: -10px;
-      width: 100%;
+      width: 50%; /* Half line */
       height: 3px;
       background-color: silver;
       z-index: 0;
@@ -159,6 +145,10 @@
       max-width: 900px;
       margin: 0 auto;
       font-weight: bold;
+    }
+
+    .highlight {
+      color: #00b0ff;
     }
 
     .pillars ul {
@@ -191,13 +181,28 @@
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     }
 
-    .contact-box h3,
+    .contact-box h3 {
+      color: #00b0ff;
+      font-size: 26px;
+      margin-bottom: 20px;
+      text-align: center;
+      font-weight: bold;
+    }
+
     .form-box h2 {
       color: #00b0ff;
       font-size: 26px;
       margin-bottom: 20px;
       text-align: center;
       font-weight: bold;
+    }
+
+    .gap-note {
+      font-size: 16px;
+      font-weight: bold;
+      color: #aaa;
+      margin-left: 8px;
+      display: inline-block;
     }
 
     .contact-box p,
@@ -259,7 +264,6 @@
   <!-- Intro Section -->
   <div class="intro-section">
     <img class="intro-image" src="https://i.postimg.cc/S2HvrdjX/IMG-4687.jpg" alt="Gym Fashion" />
-    <!-- Centered text will be shown after the animation -->
     <div class="centered-text">
       <h1>SHIRYON</h1>
       <p class="tagline">Revolutionizing your gym wardrobe</p>
@@ -271,35 +275,36 @@
   <div class="content-wrapper">
     <section class="slide-section">
       <h2 data-number="1">What We’re Building</h2>
-      <p>SHIRYON is not another activewear label. We are creating a new category: Dedicated Gymwear—apparel engineered for squats, pulls, and presses. The global fitness apparel market (~$200 billion by 2028) is saturated—but strength-focused athletes remain overlooked.</p>
-      <p>While yoga, running, and lifestyle segments dominate, the weight room has been left behind. SHIRYON fills that gap.</p>
+      <p><span class="highlight">SHIRYON</span> is not another activewear label. We are creating a new category: <span class="highlight">Dedicated Gymwear</span> — apparel engineered for <span class="highlight">squats</span>, <span class="highlight">pulls</span>, and <span class="highlight">presses</span>.</p>
+      <p>The global fitness apparel market (~<span class="highlight">$200 billion</span> by 2028) is saturated — but <span class="highlight">strength-focused athletes</span> remain overlooked.</p>
+      <p>While yoga, running, and lifestyle segments dominate, the <span class="highlight">weight room</span> has been left behind. <span class="highlight">SHIRYON</span> fills that gap.</p>
     </section>
 
     <section class="slide-section">
       <h2 data-number="2">Our Strategy</h2>
-      <p><i>“Our unfair advantage is how we see.”</i><br>We don’t copy models. We create them—with storytelling, design intelligence, and strategic restraint.</p>
+      <p><i>“Our unfair advantage is how we see.”</i> We don’t copy models. We <span class="highlight">create them</span>—with <span class="highlight">storytelling</span>, <span class="highlight">design intelligence</span>, and <span class="highlight">strategic restraint</span>.</p>
     </section>
 
     <section class="slide-section pillars">
       <h2 data-number="3">Three Pillars</h2>
       <ul>
-        <li><strong>Product Development:</strong> Prototyping with award-winning industrial design firms from Poland.</li>
-        <li><strong>Jedidya Raju</strong> – Founder | Vision Lead – A product thinker with a storyteller’s instinct.</li>
-        <li><strong>Charan A</strong> – Co-Founder | Operations Lead – Translates strategy into production—from concept to delivery.</li>
-        <li><strong>Global Team:</strong> Specialists in biomechanics, apparel engineering, and industrial prototyping from India and Europe.</li>
+        <li><span class="highlight">Product Development:</span> Prototyping with award-winning industrial design firms from Poland.</li>
+        <li><span class="highlight">Jedidya Raju</span> – Founder | Vision Lead – A product thinker with a storyteller’s instinct.</li>
+        <li><span class="highlight">Charan A</span> – Co-Founder | Operations Lead – Translates strategy into production—from concept to delivery.</li>
+        <li><span class="highlight">Global Team:</span> Specialists in biomechanics, apparel engineering, and industrial prototyping from India and Europe.</li>
       </ul>
     </section>
 
     <section class="slide-section">
       <h2 data-number="4">Contact</h2>
-      <p>Let’s Build the Future of Gymwear.<br>Whether you’re an investor, collaborator, strategic advisor, or just curious—we’d love to connect.</p>
+      <p>Let’s <span class="highlight">Build the Future</span> of Gymwear.<br>Whether you’re an <span class="highlight">investor</span>, <span class="highlight">collaborator</span>, <span class="highlight">strategic advisor</span>, or just curious—we’d love to connect.</p>
       <div class="contact-section">
         <div class="contact-box">
           <h3>Contact Us</h3>
           <p>Email: <a href="mailto:founders@shiryon.in" style="color: #00b0ff;">founders@shiryon.in</a></p>
         </div>
         <div class="form-box">
-          <h2>Get In Touch</h2>
+          <h2>Get In Touch<span class="gap-note"> We saw the gap</span></h2>
           <form method="POST" action="https://formspree.io/f/xzzeyjpd">
             <input type="text" name="first-name" placeholder="First Name" required />
             <input type="text" name="last-name" placeholder="Last Name" required />
@@ -316,6 +321,5 @@
   <footer>
     SHIRYON TEXTILES PVT LTD, Plot 326, TNGO’s Colony Phase 2, Gachibowli, Hyderabad, India – 500032
   </footer>
-
 </body>
 </html>
