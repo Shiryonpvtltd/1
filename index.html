@@ -48,13 +48,22 @@
       left: 45%;
       transform: translate(-50%, -50%);
       z-index: 1;
-      animation: zoomFade 5s ease-in-out forwards;
+      animation: ferrariZoom 6s ease-in-out forwards;
     }
 
-    @keyframes zoomFade {
-      0% { transform: scale(1); opacity: 1; }
-      60% { transform: scale(1.05); opacity: 1; }
-      100% { transform: scale(1.1); opacity: 0; }
+    @keyframes ferrariZoom {
+      0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+      }
+      60% {
+        transform: translate(-50%, -50%) scale(1.05);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 0;
+      }
     }
 
     .centered-text {
@@ -123,7 +132,8 @@
     .section-heading .line {
       flex-grow: 1;
       height: 2px;
-      background-color: silver;
+      background-color: black;
+      max-width: 50%;
     }
 
     .slide-section p,
