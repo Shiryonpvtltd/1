@@ -17,8 +17,8 @@
 
     body {
       font-family: 'Orbitron', sans-serif;
-      background-color: #111;
-      color: white;
+      background-color: white;
+      color: black;
       overflow-x: hidden;
     }
 
@@ -71,14 +71,14 @@
 
     .centered-text h1 {
       font-size: 60px;
-      color: #fff;
+      color: black;
       font-weight: bold;
       letter-spacing: 2px;
     }
 
     .centered-text .tagline {
       font-size: 26px;
-      color: #aaa;
+      color: gray;
       font-weight: bold;
     }
 
@@ -96,7 +96,6 @@
     }
 
     .slide-section {
-      height: auto;
       padding: 50px 30px;
       display: flex;
       flex-direction: column;
@@ -105,37 +104,26 @@
       gap: 30px;
     }
 
-    .slide-section h2 {
+    .section-heading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 42px;
-      color: #ffffff;
       font-weight: bold;
-      text-shadow: 0 0 8px rgba(0, 176, 255, 0.4);
-      letter-spacing: 1px;
-      position: relative;
-      padding-left: 50px;
-      margin-top: 50px;
+      margin-bottom: 20px;
+      color: #00b0ff;
+      gap: 12px;
     }
 
-    .slide-section h2::before {
-      content: attr(data-number);
-      position: absolute;
-      left: 0;
-      top: -20px;
-      font-size: 60px;
-      font-weight: bold;
+    .section-heading .number {
+      font-size: 42px;
       color: silver;
-      z-index: 1;
     }
 
-    .slide-section h2::after {
-      content: "";
-      position: absolute;
-      left: 50px;
-      top: -10px;
-      width: 50%; /* Half line */
-      height: 3px;
+    .section-heading .line {
+      flex-grow: 1;
+      height: 2px;
       background-color: silver;
-      z-index: 0;
     }
 
     .slide-section p,
@@ -173,22 +161,15 @@
 
     .contact-box,
     .form-box {
-      background-color: #222;
+      background-color: #f5f5f5;
       padding: 30px;
       border-radius: 10px;
       max-width: 500px;
       flex: 1;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
-    .contact-box h3 {
-      color: #00b0ff;
-      font-size: 26px;
-      margin-bottom: 20px;
-      text-align: center;
-      font-weight: bold;
-    }
-
+    .contact-box h3,
     .form-box h2 {
       color: #00b0ff;
       font-size: 26px;
@@ -200,7 +181,7 @@
     .gap-note {
       font-size: 16px;
       font-weight: bold;
-      color: #aaa;
+      color: gray;
       margin-left: 8px;
       display: inline-block;
     }
@@ -208,7 +189,7 @@
     .contact-box p,
     input,
     textarea {
-      color: #00b0ff;
+      color: black;
       font-size: 16px;
       font-weight: bold;
     }
@@ -221,8 +202,8 @@
 
     input,
     textarea {
-      background-color: #333;
-      border: 1px solid #555;
+      background-color: white;
+      border: 1px solid #ccc;
       padding: 12px;
       border-radius: 8px;
     }
@@ -246,47 +227,84 @@
       text-align: center;
       padding: 30px;
       font-size: 14px;
-      color: #aaa;
+      color: gray;
     }
 
     @media (max-width: 768px) {
       .centered-text h1 { font-size: 32px; }
       .centered-text .tagline { font-size: 20px; }
       .centered-text .coming-soon { font-size: 18px; }
+
+      .section-heading {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .section-heading .line {
+        width: 60%;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Logo -->
   <img class="logo" src="https://i.postimg.cc/S2HvrdjX/IMG-4687.jpg" alt="SHIRYON Logo" />
 
-  <!-- Intro Section -->
   <div class="intro-section">
     <img class="intro-image" src="https://i.postimg.cc/S2HvrdjX/IMG-4687.jpg" alt="Gym Fashion" />
     <div class="centered-text">
       <h1>SHIRYON</h1>
       <p class="tagline">Revolutionizing your gym wardrobe</p>
-      <p class="coming-soon">SHIRYON — Coming Soon</p>
+      <p class="coming-soon">Coming Soon</p>
     </div>
   </div>
 
-  <!-- Content -->
   <div class="content-wrapper">
+
     <section class="slide-section">
-      <h2 data-number="1">What We’re Building</h2>
+      <div class="section-heading">
+        <span class="number">1</span>
+        <span class="line"></span>
+        <span>Founder’s Vision</span>
+      </div>
+      <!-- Content -->
+      <p><em>I don’t build startups.<br>I build what the world didn’t see coming.</em></p>
+      <p><span class="highlight">SHIRYON</span> isn’t just a brand — it’s a response to everything performance wear forgot.</p>
+      <p>Every venture I pursue begins where convention ends — not because it’s trendy, but because it’s necessary.</p>
+      <p>I operate at the edge of industries — where <span class="highlight">OJJO’s deep tech</span> meets emotion, and <span class="highlight">DUOBLT’s travel</span> meets intelligence.</p>
+      <p>And what’s in motion goes far beyond gymwear.</p>
+      <p><em>If it’s obvious, it’s too late.<br>If it already exists, I’m not interested.</em></p>
+      <p><span class="highlight">SHIRYON</span> is the first of three ventures currently in motion. The others? Let’s just say — they’re bold enough to make the big players wish they got there first.</p>
+      <p class="highlight">— Jedidya Raju<br>Founder, SHIRYON</p>
+    </section>
+
+    <section class="slide-section">
+      <div class="section-heading">
+        <span class="number">2</span>
+        <span class="line"></span>
+        <span>What We’re Building</span>
+      </div>
       <p><span class="highlight">SHIRYON</span> is not another activewear label. We are creating a new category: <span class="highlight">Dedicated Gymwear</span> — apparel engineered for <span class="highlight">squats</span>, <span class="highlight">pulls</span>, and <span class="highlight">presses</span>.</p>
       <p>The global fitness apparel market (~<span class="highlight">$200 billion</span> by 2028) is saturated — but <span class="highlight">strength-focused athletes</span> remain overlooked.</p>
       <p>While yoga, running, and lifestyle segments dominate, the <span class="highlight">weight room</span> has been left behind. <span class="highlight">SHIRYON</span> fills that gap.</p>
     </section>
 
     <section class="slide-section">
-      <h2 data-number="2">Our Strategy</h2>
-      <p><i>“Our unfair advantage is how we see.”</i> We don’t copy models. We <span class="highlight">create them</span>—with <span class="highlight">storytelling</span>, <span class="highlight">design intelligence</span>, and <span class="highlight">strategic restraint</span>.</p>
+      <div class="section-heading">
+        <span class="number">3</span>
+        <span class="line"></span>
+        <span>Our Strategy</span>
+      </div>
+      <p><i>“Our unfair advantage is how we see.”</i> We don’t copy models. We <span class="highlight">create them</span> — with <span class="highlight">storytelling</span>, <span class="highlight">design intelligence</span>, and <span class="highlight">strategic restraint</span>.</p>
     </section>
 
     <section class="slide-section pillars">
-      <h2 data-number="3">Three Pillars</h2>
+      <div class="section-heading">
+        <span class="number">4</span>
+        <span class="line"></span>
+        <span>Three Pillars</span>
+      </div>
       <ul>
         <li><span class="highlight">Product Development:</span> Prototyping with award-winning industrial design firms from Poland.</li>
         <li><span class="highlight">Jedidya Raju</span> – Founder | Vision Lead – A product thinker with a storyteller’s instinct.</li>
@@ -296,7 +314,11 @@
     </section>
 
     <section class="slide-section">
-      <h2 data-number="4">Contact</h2>
+      <div class="section-heading">
+        <span class="number">5</span>
+        <span class="line"></span>
+        <span>Contact</span>
+      </div>
       <p>Let’s <span class="highlight">Build the Future</span> of Gymwear.<br>Whether you’re an <span class="highlight">investor</span>, <span class="highlight">collaborator</span>, <span class="highlight">strategic advisor</span>, or just curious—we’d love to connect.</p>
       <div class="contact-section">
         <div class="contact-box">
@@ -316,10 +338,12 @@
         </div>
       </div>
     </section>
+
   </div>
 
   <footer>
     SHIRYON TEXTILES PVT LTD, Plot 326, TNGO’s Colony Phase 2, Gachibowli, Hyderabad, India – 500032
   </footer>
+
 </body>
 </html>
