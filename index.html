@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SHIRYON | Revolutionizing Gymwear</title>
 
   <!-- Orbitron Font -->
@@ -15,12 +15,17 @@
       box-sizing: border-box;
     }
 
+    html, body {
+      height: 100%;
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Orbitron', sans-serif;
       background-color: black;
       color: black;
-      overflow-x: hidden;
       transition: background-color 1s ease;
+      overflow-x: hidden;
     }
 
     .logo {
@@ -95,12 +100,13 @@
       color: black;
       font-weight: bold;
       letter-spacing: 2px;
+      margin-bottom: 30px;
     }
 
     .centered-text .tagline,
     .centered-text .latin-tagline {
-      font-size: 26px;
-      color: gray;
+      font-size: 24px;
+      color: red;
       font-weight: bold;
     }
 
@@ -113,24 +119,27 @@
       font-weight: bold;
       color: black;
       letter-spacing: 1.5px;
-      margin-top: 10px;
+      margin-top: 20px;
     }
 
     .content-wrapper {
-      display: flex;
-      flex-direction: column;
+      height: 100%;
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
     }
 
     .slide-section {
-      height: 100vh;
-      padding: 50px 30px;
+      height: auto;
+      padding: 100px 30px;
       display: flex;
       flex-direction: column;
+      justify-content: center;
       text-align: left;
       gap: 30px;
       max-width: 1000px;
       margin: 0 auto;
-      justify-content: center;
+      border-top: 1px solid #ddd;
+      scroll-snap-align: start;
     }
 
     .section-heading {
@@ -162,6 +171,7 @@
       line-height: 1.8;
       font-weight: 500;
       color: #333;
+      margin-bottom: 20px;
     }
 
     .highlight {
@@ -263,16 +273,7 @@
       .centered-text .latin-tagline { font-size: 20px; }
       .centered-text .coming-soon { font-size: 18px; }
 
-      .section-heading {
-        padding-left: 0;
-      }
-
-      .section-heading .line {
-        width: 30px;
-      }
-
       .slide-section {
-        height: auto;
         padding: 60px 20px;
       }
     }
@@ -328,7 +329,6 @@
       </ul>
     </section>
 
-    <!-- SLIDE 5 becomes new SLIDE 4 -->
     <section class="slide-section">
       <div class="section-heading">
         <span class="number">4</span>
@@ -345,7 +345,6 @@
       <p class="highlight">— Jedidya Raju<br>Founder, SHIRYON</p>
     </section>
 
-    <!-- SLIDE 4 becomes new SLIDE 5 -->
     <section class="slide-section">
       <div class="section-heading">
         <span class="number">5</span>
