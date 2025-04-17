@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,9 +17,10 @@
 
     body {
       font-family: 'Orbitron', sans-serif;
-      background-color: white;
+      background-color: black;
       color: black;
       overflow-x: hidden;
+      transition: background-color 1s ease;
     }
 
     .logo {
@@ -29,6 +29,17 @@
       left: 20px;
       width: 90px;
       z-index: 10;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    body.reveal {
+      background-color: white;
+      color: black;
+    }
+
+    body.reveal .logo {
+      opacity: 1;
     }
 
     .intro-section {
@@ -41,7 +52,7 @@
     }
 
     .intro-image {
-      width: 35%;  /* Slightly reduced image size */
+      width: 35%;
       height: auto;
       object-fit: cover;
       position: absolute;
@@ -86,16 +97,21 @@
       letter-spacing: 2px;
     }
 
-    .centered-text .tagline {
+    .centered-text .tagline,
+    .centered-text .latin-tagline {
       font-size: 26px;
       color: gray;
       font-weight: bold;
     }
 
+    .centered-text .latin-tagline {
+      margin-top: 12px;
+    }
+
     .centered-text .coming-soon {
       font-size: 22px;
       font-weight: bold;
-      color: #00b0ff;
+      color: black;
       letter-spacing: 1.5px;
       margin-top: 10px;
     }
@@ -106,6 +122,7 @@
     }
 
     .slide-section {
+      height: 100vh;
       padding: 50px 30px;
       display: flex;
       flex-direction: column;
@@ -113,6 +130,7 @@
       gap: 30px;
       max-width: 1000px;
       margin: 0 auto;
+      justify-content: center;
     }
 
     .section-heading {
@@ -125,18 +143,17 @@
       letter-spacing: 1.5px;
       gap: 12px;
       margin-bottom: 20px;
-      color: #ff4d4d;  /* Brighter red color */
+      color: red;
     }
 
     .section-heading .number {
       font-size: 18px;
       font-weight: bold;
-      color: #ff4d4d;
     }
 
     .section-heading .line {
       height: 1.5px;
-      background-color: #ff4d4d;  /* Brighter red color */
+      background-color: red;
       width: 40px;
     }
 
@@ -148,7 +165,6 @@
     }
 
     .highlight {
-      color: #00b0ff;
       font-weight: bold;
     }
 
@@ -182,7 +198,7 @@
 
     .contact-box h3,
     .form-box h2 {
-      color: #00b0ff;
+      color: black;
       font-size: 26px;
       margin-bottom: 20px;
       text-align: center;
@@ -220,7 +236,7 @@
     }
 
     button {
-      background-color: #00b0ff;
+      background-color: black;
       color: white;
       padding: 12px;
       border: none;
@@ -231,7 +247,7 @@
     }
 
     button:hover {
-      background-color: #008dd1;
+      background-color: #222;
     }
 
     footer {
@@ -243,7 +259,8 @@
 
     @media (max-width: 768px) {
       .centered-text h1 { font-size: 32px; }
-      .centered-text .tagline { font-size: 20px; }
+      .centered-text .tagline,
+      .centered-text .latin-tagline { font-size: 20px; }
       .centered-text .coming-soon { font-size: 18px; }
 
       .section-heading {
@@ -252,6 +269,11 @@
 
       .section-heading .line {
         width: 30px;
+      }
+
+      .slide-section {
+        height: auto;
+        padding: 60px 20px;
       }
     }
   </style>
@@ -264,8 +286,9 @@
     <img class="intro-image" src="https://i.postimg.cc/S2HvrdjX/IMG-4687.jpg" alt="Gym Fashion" />
     <div class="centered-text">
       <h1>SHIRYON</h1>
-      <p class="tagline">Revolutionizing your gym wardrobe</p>
-      <p class="coming-soon">Coming Soon</p>
+      <p class="latin-tagline">Vidēmus. Ædificāmus. Domināmur.</p>
+      <p class="tagline">We see. We build. We dominate.</p>
+      <p class="coming-soon">Revolutionizing Gym Apparel</p>
     </div>
   </div>
 
@@ -274,6 +297,41 @@
     <section class="slide-section">
       <div class="section-heading">
         <span class="number">1</span>
+        <span class="line"></span>
+        <span>What We’re Building</span>
+      </div>
+      <p><span class="highlight">SHIRYON</span> is not another activewear label. We are creating a new category: <span class="highlight">Dedicated Gymwear</span> — apparel engineered for <span class="highlight">squats</span>, <span class="highlight">pulls</span>, and <span class="highlight">presses</span>.</p>
+      <p>The global fitness apparel market (~<span class="highlight">$200 billion</span> by 2028) is saturated — but <span class="highlight">strength-focused athletes</span> remain overlooked.</p>
+      <p>While yoga, running, and lifestyle segments dominate, the <span class="highlight">weight room</span> has been left behind. <span class="highlight">SHIRYON</span> fills that gap.</p>
+    </section>
+
+    <section class="slide-section">
+      <div class="section-heading">
+        <span class="number">2</span>
+        <span class="line"></span>
+        <span>Our Strategy</span>
+      </div>
+      <p><i>“Our unfair advantage is how we see.”</i> We don’t copy models. We <span class="highlight">create them</span> — with <span class="highlight">storytelling</span>, <span class="highlight">design intelligence</span>, and <span class="highlight">strategic restraint</span>.</p>
+    </section>
+
+    <section class="slide-section pillars">
+      <div class="section-heading">
+        <span class="number">3</span>
+        <span class="line"></span>
+        <span>Three Pillars</span>
+      </div>
+      <ul>
+        <li><span class="highlight">Product Development:</span> Prototyping with award-winning industrial design firms from Poland.</li>
+        <li><span class="highlight">Jedidya Raju</span> – Founder | Vision Lead – A product thinker with a storyteller’s instinct.</li>
+        <li><span class="highlight">Charan A</span> – Co-Founder | Operations Lead – Translates strategy into production—from concept to delivery.</li>
+        <li><span class="highlight">Global Team:</span> Specialists in biomechanics, apparel engineering, and industrial prototyping from India and Europe.</li>
+      </ul>
+    </section>
+
+    <!-- SLIDE 5 becomes new SLIDE 4 -->
+    <section class="slide-section">
+      <div class="section-heading">
+        <span class="number">4</span>
         <span class="line"></span>
         <span>The Exhibition</span>
       </div>
@@ -287,40 +345,7 @@
       <p class="highlight">— Jedidya Raju<br>Founder, SHIRYON</p>
     </section>
 
-    <section class="slide-section">
-      <div class="section-heading">
-        <span class="number">2</span>
-        <span class="line"></span>
-        <span>What We’re Building</span>
-      </div>
-      <p><span class="highlight">SHIRYON</span> is not another activewear label. We are creating a new category: <span class="highlight">Dedicated Gymwear</span> — apparel engineered for <span class="highlight">squats</span>, <span class="highlight">pulls</span>, and <span class="highlight">presses</span>.</p>
-      <p>The global fitness apparel market (~<span class="highlight">$200 billion</span> by 2028) is saturated — but <span class="highlight">strength-focused athletes</span> remain overlooked.</p>
-      <p>While yoga, running, and lifestyle segments dominate, the <span class="highlight">weight room</span> has been left behind. <span class="highlight">SHIRYON</span> fills that gap.</p>
-    </section>
-
-    <section class="slide-section">
-      <div class="section-heading">
-        <span class="number">3</span>
-        <span class="line"></span>
-        <span>Our Strategy</span>
-      </div>
-      <p><i>“Our unfair advantage is how we see.”</i> We don’t copy models. We <span class="highlight">create them</span> — with <span class="highlight">storytelling</span>, <span class="highlight">design intelligence</span>, and <span class="highlight">strategic restraint</span>.</p>
-    </section>
-
-    <section class="slide-section pillars">
-      <div class="section-heading">
-        <span class="number">4</span>
-        <span class="line"></span>
-        <span>Three Pillars</span>
-      </div>
-      <ul>
-        <li><span class="highlight">Product Development:</span> Prototyping with award-winning industrial design firms from Poland.</li>
-        <li><span class="highlight">Jedidya Raju</span> – Founder | Vision Lead – A product thinker with a storyteller’s instinct.</li>
-        <li><span class="highlight">Charan A</span> – Co-Founder | Operations Lead – Translates strategy into production—from concept to delivery.</li>
-        <li><span class="highlight">Global Team:</span> Specialists in biomechanics, apparel engineering, and industrial prototyping from India and Europe.</li>
-      </ul>
-    </section>
-
+    <!-- SLIDE 4 becomes new SLIDE 5 -->
     <section class="slide-section">
       <div class="section-heading">
         <span class="number">5</span>
@@ -331,7 +356,7 @@
       <div class="contact-section">
         <div class="contact-box">
           <h3>Contact Us</h3>
-          <p>Email: <a href="mailto:founders@shiryon.in" style="color: #00b0ff;">founders@shiryon.in</a></p>
+          <p>Email: <a href="mailto:founders@shiryon.in" style="color: black;">founders@shiryon.in</a></p>
         </div>
         <div class="form-box">
           <h2>Get In Touch<span class="gap-note"> We saw the gap</span></h2>
@@ -353,5 +378,10 @@
     SHIRYON TEXTILES PVT LTD, Plot 326, TNGO’s Colony Phase 2, Gachibowli, Hyderabad, India – 500032
   </footer>
 
+  <script>
+    setTimeout(() => {
+      document.body.classList.add('reveal');
+    }, 6000);
+  </script>
 </body>
 </html>
