@@ -25,7 +25,6 @@
     body {
       font-family: 'Orbitron', sans-serif;
       color: black;
-      overflow-x: hidden;
       transition: background-color 1s ease;
     }
 
@@ -49,8 +48,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: white;
-      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+      background-color: inherit;
     }
 
     .intro-image {
@@ -62,23 +60,17 @@
       left: 50%;
       transform: translate(-50%, -50%);
       z-index: 1;
-      animation: ferrariZoom 6s ease-in-out forwards;
+      animation: zoomImage 6s ease-in-out forwards;
     }
 
-    @keyframes ferrariZoom {
+    @keyframes zoomImage {
       0% {
         transform: translate(-50%, -50%) scale(1);
         opacity: 1;
       }
-      60% {
-        transform: translate(-50%, -50%) scale(1.05);
-        opacity: 1;
-        background-color: black;
-      }
       100% {
-        transform: translate(-50%, -50%) scale(1.1);
+        transform: translate(-50%, -50%) scale(1.2);
         opacity: 0;
-        background-color: white;
       }
     }
 
@@ -96,7 +88,6 @@
 
     .centered-text h1 {
       font-size: 60px;
-      color: black;
       font-weight: bold;
       letter-spacing: 2px;
       margin-bottom: 30px;
@@ -123,15 +114,13 @@
 
     .content-wrapper {
       scroll-snap-type: y mandatory;
-      height: 100%;
-      padding-top: 100px;
     }
 
     .slide-section {
       background-color: white;
       max-width: 900px;
-      margin: 40px auto;
-      padding: 60px 40px;
+      margin: 0 auto;
+      padding: 100px 40px;
       scroll-snap-align: start;
       box-shadow: 0 0 30px rgba(0,0,0,0.05);
       border-radius: 8px;
@@ -146,8 +135,27 @@
       text-transform: uppercase;
       letter-spacing: 1.5px;
       gap: 12px;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
       color: red;
+      animation: animateHeading 2.5s ease-out infinite;
+    }
+
+    @keyframes animateHeading {
+      0% {
+        transform: scale(1);
+        color: red;
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.05);
+        color: darkred;
+        opacity: 0.8;
+      }
+      100% {
+        transform: scale(1);
+        color: red;
+        opacity: 1;
+      }
     }
 
     .section-heading .number {
@@ -173,15 +181,8 @@
       font-weight: bold;
     }
 
-    .pillars ul {
-      padding-left: 20px;
-      font-size: 18px;
-      line-height: 1.8;
-      color: #333;
-    }
-
-    .pillars li {
-      margin-bottom: 10px;
+    .full-image-slide {
+      display: none;
     }
 
     .full-image-slide img {
@@ -193,9 +194,8 @@
 
     .contact-section {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
+      flex-direction: column;
+      align-items: center;
     }
 
     .contact-box,
@@ -204,7 +204,8 @@
       padding: 30px;
       border-radius: 10px;
       max-width: 500px;
-      flex: 1;
+      width: 100%;
+      margin-bottom: 30px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
@@ -225,14 +226,6 @@
       display: inline-block;
     }
 
-    .contact-box p,
-    input,
-    textarea {
-      color: black;
-      font-size: 16px;
-      font-weight: bold;
-    }
-
     form {
       display: flex;
       flex-direction: column;
@@ -245,6 +238,8 @@
       border: 1px solid #ccc;
       padding: 12px;
       border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
     }
 
     button {
@@ -276,8 +271,8 @@
       .centered-text .coming-soon { font-size: 18px; }
 
       .slide-section {
-        padding: 40px 20px;
-        margin: 20px;
+        padding: 60px 20px;
+        margin: 0 10px;
       }
 
       .full-image-slide img {
@@ -290,6 +285,7 @@
 
   <img class="logo" src="https://i.postimg.cc/S2HvrdjX/IMG-4687.jpg" alt="SHIRYON Logo" />
 
+  <!-- INTRO SECTION -->
   <div class="intro-section">
     <img class="intro-image" src="https://i.postimg.cc/S2HvrdjX/IMG-4687.jpg" alt="Gym Fashion" />
     <div class="centered-text">
@@ -302,6 +298,7 @@
 
   <div class="content-wrapper">
 
+    <!-- SLIDE 1 -->
     <section class="slide-section">
       <div class="section-heading">
         <span class="number">1</span>
@@ -313,11 +310,12 @@
       <p>While yoga, running, and lifestyle segments dominate, the <span class="highlight">weight room</span> has been left behind. <span class="highlight">SHIRYON</span> fills that gap.</p>
     </section>
 
-    <!-- Fullscreen Image Slide (will appear after "What We’re Building") -->
-    <section class="slide-section full-image-slide" style="display: none;">
+    <!-- IMAGE SLIDE (AFTER SLIDE 1) -->
+    <section class="slide-section full-image-slide">
       <img src="https://i.postimg.cc/5Xxjn1mD/your-image.jpg" alt="Gymwear Hero" />
     </section>
 
+    <!-- SLIDE 2 -->
     <section class="slide-section">
       <div class="section-heading">
         <span class="number">2</span>
@@ -327,8 +325,8 @@
       <p><i>“Our unfair advantage is how we see.”</i> We don’t copy models. We <span class="highlight">create them</span> — with <span class="highlight">storytelling</span>, <span class="highlight">design intelligence</span>, and <span class="highlight">strategic restraint</span>.</p>
     </section>
 
-    <!-- Three Pillars (Slide 3) -->
-    <section class="slide-section pillars">
+    <!-- SLIDE 3 -->
+    <section class="slide-section">
       <div class="section-heading">
         <span class="number">3</span>
         <span class="line"></span>
@@ -340,43 +338,40 @@
       <p><strong>Global Team:</strong> Specialists in biomechanics, apparel engineering, and industrial prototyping.</p>
     </section>
 
-    <!-- The Exhibition (Founder’s Vision) -->
+    <!-- SLIDE 4: THE EXHIBITION -->
     <section class="slide-section">
       <div class="section-heading">
         <span class="number">4</span>
         <span class="line"></span>
         <span>The Exhibition</span>
       </div>
-      <p><span class="highlight">Founder’s Vision</span><br>
+      <p><strong>Founder’s Vision</strong><br>
       I don’t build startups.<br>
       I build what the world didn’t see coming.</p>
-      <p><span class="highlight">SHIRYON</span> isn’t just a brand — it’s a response to everything performance wear forgot.<br>
-      Every venture I pursue begins where convention ends — not because it’s trendy, but because it’s necessary.</p>
-      <p>I operate at the edge of industries — where OJJO’s deep tech meets emotion, and DUOBLT’s travel meets intelligence.<br>
-      And what’s in motion goes far beyond gymwear.</p>
-      <p>If it’s obvious, it’s too late.<br>
-      If it already exists, I’m not interested.</p>
-      <p>SHIRYON is the first of three ventures currently in motion. The others?<br>
-      Let’s just say — they’re bold enough to make the big players wish they got there first.</p>
-      <p>— Jedidya Raju<br>
-      Founder, SHIRYON</p>
+      <p><strong>SHIRYON</strong> isn’t just a brand — it’s a response to everything performance wear forgot.</p>
+      <p>Every venture I pursue begins where convention ends — not because it’s trendy, but because it’s necessary.</p>
+      <p>I operate at the edge of industries — where OJJO’s deep tech meets emotion, and DUOBLT’s travel meets intelligence.</p>
+      <p>If it’s obvious, it’s too late. If it already exists, I’m not interested.</p>
+      <p>SHIRYON is the first of three ventures currently in motion. The others?<br>They’ll make the big players wish they got there first.</p>
+      <p>— Jedidya Raju, Founder, SHIRYON</p>
     </section>
 
-    <!-- Contact Section -->
-    <section class="slide-section contact-section">
+    <!-- CONTACT -->
+    <section class="slide-section">
       <div class="section-heading">
         <span class="number">5</span>
         <span class="line"></span>
         <span>Contact</span>
       </div>
-      <p>Let’s <span class="highlight">Build the Future</span> of Gymwear.<br>Whether you’re an <span class="highlight">investor</span>, <span class="highlight">collaborator</span>, <span class="highlight">strategic advisor</span>, or just curious—we’d love to connect.</p>
+      <p>Let’s <span class="highlight">Build the Future</span> of Gymwear.<br>Whether you’re an <span class="highlight">investor</span>, <span class="highlight">collaborator</span>, or <span class="highlight">strategic advisor</span> — let’s connect.</p>
+
       <div class="contact-section">
         <div class="contact-box">
           <h3>Contact Us</h3>
           <p>Email: <a href="mailto:founders@shiryon.in" style="color: black;">founders@shiryon.in</a></p>
         </div>
         <div class="form-box">
-          <h2>Get In Touch<span class="gap-note"> We saw the gap</span></h2>
+          <h2>Get In Touch<span class="gap-note">We saw the gap</span></h2>
           <form method="POST" action="https://formspree.io/f/xzzeyjpd">
             <input type="text" name="first-name" placeholder="First Name" required />
             <input type="text" name="last-name" placeholder="Last Name" required />
@@ -388,7 +383,6 @@
         </div>
       </div>
     </section>
-
   </div>
 
   <footer>
@@ -396,20 +390,16 @@
   </footer>
 
   <script>
+    document.body.style.backgroundColor = 'black';
+
     setTimeout(() => {
       document.body.classList.add('reveal');
-      document.body.style.backgroundColor = 'black'; // Change background to black during intro animation
-    }, 6000);
+    }, 1000);
 
     setTimeout(() => {
-      document.body.style.backgroundColor = 'white'; // Revert background to white after animation
-    }, 12000); // Revert after 6s of intro animation
-
-    // Display Image after "What We’re Building"
-    setTimeout(() => {
+      document.body.style.backgroundColor = 'white';
       document.querySelector('.full-image-slide').style.display = 'block';
-    }, 7000); // Show after 1s delay after "What We’re Building"
+    }, 6000);
   </script>
-
 </body>
 </html>
