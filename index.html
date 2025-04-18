@@ -18,14 +18,15 @@
     html, body {
       height: 100%;
       scroll-behavior: smooth;
+      background-color: white;
+      overflow-x: hidden;
     }
 
     body {
       font-family: 'Orbitron', sans-serif;
-      background-color: black;
       color: black;
-      transition: background-color 1s ease;
       overflow-x: hidden;
+      transition: background-color 1s ease;
     }
 
     .logo {
@@ -38,11 +39,6 @@
       transition: opacity 1s ease;
     }
 
-    body.reveal {
-      background-color: white;
-      color: black;
-    }
-
     body.reveal .logo {
       opacity: 1;
     }
@@ -53,7 +49,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      overflow: hidden;
+      background: white;
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
     }
 
     .intro-image {
@@ -76,10 +73,12 @@
       60% {
         transform: translate(-50%, -50%) scale(1.05);
         opacity: 1;
+        background-color: black;
       }
       100% {
         transform: translate(-50%, -50%) scale(1.1);
         opacity: 0;
+        background-color: white;
       }
     }
 
@@ -123,29 +122,25 @@
     }
 
     .content-wrapper {
-      height: 100%;
-      overflow-y: scroll;
       scroll-snap-type: y mandatory;
+      height: 100%;
+      padding-top: 100px;
     }
 
     .slide-section {
-      height: auto;
-      padding: 100px 30px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: left;
-      gap: 30px;
-      max-width: 1000px;
-      margin: 0 auto;
-      border-top: 1px solid #ddd;
+      background-color: white;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 60px 40px;
       scroll-snap-align: start;
+      box-shadow: 0 0 30px rgba(0,0,0,0.05);
+      border-radius: 8px;
+      min-height: 100vh;
     }
 
     .section-heading {
       display: flex;
       align-items: center;
-      justify-content: flex-start;
       font-size: 18px;
       font-weight: bold;
       text-transform: uppercase;
@@ -187,6 +182,13 @@
 
     .pillars li {
       margin-bottom: 10px;
+    }
+
+    .full-image-slide img {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+      border-radius: 8px;
     }
 
     .contact-section {
@@ -274,13 +276,13 @@
       .centered-text .coming-soon { font-size: 18px; }
 
       .slide-section {
-        padding: 60px 20px;
+        padding: 40px 20px;
+        margin: 20px;
       }
-    }
 
-    /* Updated slide 5 background */
-    .slide-section.contact-section {
-      background-color: lightgrey;
+      .full-image-slide img {
+        height: auto;
+      }
     }
   </style>
 </head>
@@ -309,11 +311,11 @@
       <p><span class="highlight">SHIRYON</span> is not another activewear label. We are creating a new category: <span class="highlight">Dedicated Gymwear</span> — apparel engineered for <span class="highlight">squats</span>, <span class="highlight">pulls</span>, and <span class="highlight">presses</span>.</p>
       <p>The global fitness apparel market (~<span class="highlight">$200 billion</span> by 2028) is saturated — but <span class="highlight">strength-focused athletes</span> remain overlooked.</p>
       <p>While yoga, running, and lifestyle segments dominate, the <span class="highlight">weight room</span> has been left behind. <span class="highlight">SHIRYON</span> fills that gap.</p>
+    </section>
 
-      <!-- Added Image with visibility and proper handling -->
-      <div style="text-align: center;">
-        <img src="https://postimg.cc/5Xxjn1mD" alt="Gym Fashion" style="max-width: 100%; height: auto; margin-top: 30px;" />
-      </div>
+    <!-- Fullscreen Image Slide (will appear after "What We’re Building") -->
+    <section class="slide-section full-image-slide" style="display: none;">
+      <img src="https://i.postimg.cc/5Xxjn1mD/your-image.jpg" alt="Gymwear Hero" />
     </section>
 
     <section class="slide-section">
@@ -325,36 +327,42 @@
       <p><i>“Our unfair advantage is how we see.”</i> We don’t copy models. We <span class="highlight">create them</span> — with <span class="highlight">storytelling</span>, <span class="highlight">design intelligence</span>, and <span class="highlight">strategic restraint</span>.</p>
     </section>
 
+    <!-- Three Pillars (Slide 3) -->
     <section class="slide-section pillars">
       <div class="section-heading">
         <span class="number">3</span>
         <span class="line"></span>
         <span>Three Pillars</span>
       </div>
-      <ul>
-        <li><span class="highlight">Product Development:</span> Prototyping with award-winning industrial design firms from Poland.</li>
-        <li><span class="highlight">Jedidya Raju</span> – Founder | Vision Lead – A product thinker with a storyteller’s instinct.</li>
-        <li><span class="highlight">Charan A</span> – Co-Founder | Operations Lead – Translates strategy into production—from concept to delivery.</li>
-        <li><span class="highlight">Global Team:</span> Specialists in biomechanics, apparel engineering, and industrial prototyping from India and Europe.</li>
-      </ul>
+      <p><strong>Product Development:</strong> Prototyping with award-winning industrial design firms from Poland.</p>
+      <p><strong>Jedidya Raju</strong> – Founder | Vision Lead – A product thinker with a storyteller’s instinct.</p>
+      <p><strong>Charan A</strong> – Co-Founder | Operations Lead – Translates strategy into production—from concept to delivery.</p>
+      <p><strong>Global Team:</strong> Specialists in biomechanics, apparel engineering, and industrial prototyping.</p>
     </section>
 
+    <!-- The Exhibition (Founder’s Vision) -->
     <section class="slide-section">
       <div class="section-heading">
         <span class="number">4</span>
         <span class="line"></span>
         <span>The Exhibition</span>
       </div>
-      <p><em>I don’t build startups.<br>I build what the world didn’t see coming.</em></p>
-      <p><span class="highlight">SHIRYON</span> isn’t just a brand — it’s a response to everything performance wear forgot.</p>
-      <p>Every venture I pursue begins where convention ends — not because it’s trendy, but because it’s necessary.</p>
-      <p>I operate at the edge of industries — where <span class="highlight">OJJO’s deep tech</span> meets emotion, and <span class="highlight">DUOBLT’s travel</span> meets intelligence.</p>
-      <p>And what’s in motion goes far beyond gymwear.</p>
-      <p><em>If it’s obvious, it’s too late.<br>If it already exists, I’m not interested.</em></p>
-      <p><span class="highlight">SHIRYON</span> is the first of three ventures currently in motion. The others? Let’s just say — they’re bold enough to make the big players wish they got there first.</p>
-      <p class="highlight">— Jedidya Raju<br>Founder, SHIRYON</p>
+      <p><span class="highlight">Founder’s Vision</span><br>
+      I don’t build startups.<br>
+      I build what the world didn’t see coming.</p>
+      <p><span class="highlight">SHIRYON</span> isn’t just a brand — it’s a response to everything performance wear forgot.<br>
+      Every venture I pursue begins where convention ends — not because it’s trendy, but because it’s necessary.</p>
+      <p>I operate at the edge of industries — where OJJO’s deep tech meets emotion, and DUOBLT’s travel meets intelligence.<br>
+      And what’s in motion goes far beyond gymwear.</p>
+      <p>If it’s obvious, it’s too late.<br>
+      If it already exists, I’m not interested.</p>
+      <p>SHIRYON is the first of three ventures currently in motion. The others?<br>
+      Let’s just say — they’re bold enough to make the big players wish they got there first.</p>
+      <p>— Jedidya Raju<br>
+      Founder, SHIRYON</p>
     </section>
 
+    <!-- Contact Section -->
     <section class="slide-section contact-section">
       <div class="section-heading">
         <span class="number">5</span>
@@ -390,7 +398,18 @@
   <script>
     setTimeout(() => {
       document.body.classList.add('reveal');
+      document.body.style.backgroundColor = 'black'; // Change background to black during intro animation
     }, 6000);
+
+    setTimeout(() => {
+      document.body.style.backgroundColor = 'white'; // Revert background to white after animation
+    }, 12000); // Revert after 6s of intro animation
+
+    // Display Image after "What We’re Building"
+    setTimeout(() => {
+      document.querySelector('.full-image-slide').style.display = 'block';
+    }, 7000); // Show after 1s delay after "What We’re Building"
   </script>
+
 </body>
 </html>
