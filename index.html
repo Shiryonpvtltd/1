@@ -7,18 +7,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     html, body {
       height: 100%;
       font-family: 'Orbitron', sans-serif;
       scroll-behavior: smooth;
-      background-color: white;
+      background: white;
       color: black;
       overflow-x: hidden;
-    }
-
-    body.reveal .logo {
-      opacity: 1;
     }
 
     .logo {
@@ -26,22 +21,31 @@
       top: 20px;
       left: 20px;
       width: 90px;
-      z-index: 10;
+      z-index: 100;
       opacity: 0;
       transition: opacity 1s ease;
     }
 
-    .intro-section {
+    body.reveal .logo {
+      opacity: 1;
+    }
+
+    section {
       height: 100vh;
+      width: 100vw;
+    }
+
+    .intro {
       display: flex;
       justify-content: center;
       align-items: center;
       position: relative;
+      background-color: black;
+      color: white;
     }
 
     .intro-image {
       width: 35%;
-      object-fit: cover;
       position: absolute;
       top: 50%;
       left: 50%;
@@ -57,68 +61,47 @@
 
     .centered-text {
       position: absolute;
-      z-index: 2;
       text-align: center;
+      z-index: 2;
       opacity: 0;
       animation: fadeInText 2s ease-in 5s forwards;
     }
 
-    @keyframes fadeInText { to { opacity: 1; } }
-
-    .centered-text h1 {
-      font-size: 60px;
-      font-weight: bold;
-      letter-spacing: 2px;
-      margin-bottom: 30px;
+    @keyframes fadeInText {
+      to { opacity: 1; }
     }
 
-    .centered-text .tagline,
-    .centered-text .latin-tagline {
-      font-size: 24px;
-      color: red;
-      font-weight: bold;
-    }
+    .centered-text h1 { font-size: 60px; margin-bottom: 20px; }
+    .tagline, .latin-tagline { font-size: 24px; font-weight: bold; color: red; }
+    .latin-tagline { margin-top: 10px; }
+    .coming-soon { margin-top: 20px; font-size: 20px; color: white; }
 
-    .centered-text .latin-tagline {
-      margin-top: 12px;
-    }
-
-    .centered-text .coming-soon {
-      font-size: 22px;
-      font-weight: bold;
-      color: black;
-      letter-spacing: 1.5px;
-      margin-top: 20px;
-    }
-
-    .main-container {
-      scroll-snap-type: y mandatory;
-      overflow-y: scroll;
+    .horizontal-wrapper {
       height: 100vh;
-    }
-
-    section {
-      scroll-snap-align: start;
-      min-height: 100vh;
-      width: 100%;
+      width: 100vw;
+      overflow: hidden;
+      position: relative;
     }
 
     .horizontal-slider {
       display: flex;
+      height: 100%;
+      width: 100%;
       overflow-x: auto;
       scroll-snap-type: x mandatory;
-      height: 100vh;
       scroll-behavior: smooth;
-      position: relative;
     }
 
     .horizontal-slider section {
-      flex: 0 0 100%;
+      flex: 0 0 100vw;
+      height: 100vh;
       scroll-snap-align: start;
-      padding: 100px 40px;
-      max-width: 900px;
-      margin: auto;
+      padding: 60px;
+      box-sizing: border-box;
       overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .section-heading {
@@ -129,66 +112,53 @@
       text-transform: uppercase;
       letter-spacing: 1.5px;
       gap: 12px;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
       color: red;
-      animation: animateHeading 2.5s ease-out infinite;
     }
 
-    @keyframes animateHeading {
-      0% { transform: scale(1); color: red; opacity: 1; }
-      50% { transform: scale(1.05); color: darkred; opacity: 0.8; }
-      100% { transform: scale(1); color: red; opacity: 1; }
-    }
-
-    .section-heading .number { font-size: 18px; font-weight: bold; }
     .section-heading .line {
       height: 1.5px;
       background-color: red;
       width: 40px;
     }
 
-    p {
-      font-size: 20px;
-      line-height: 1.8;
-      font-weight: 500;
-      color: #333;
-      margin-bottom: 20px;
+    .highlight { font-weight: bold; }
+    .horizontal-slider p {
+      font-size: 18px;
+      line-height: 1.7;
+      margin-bottom: 14px;
+      max-width: 800px;
     }
 
-    .highlight { font-weight: bold; }
-
-    .arrows {
+    .arrow-btn {
       position: absolute;
       top: 50%;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      padding: 0 20px;
       transform: translateY(-50%);
-      z-index: 5;
-    }
-
-    .arrow {
-      background-color: black;
+      z-index: 10;
+      background: rgba(0,0,0,0.7);
       color: white;
       border: none;
-      padding: 12px 20px;
-      font-size: 18px;
+      font-size: 24px;
+      padding: 10px;
       cursor: pointer;
-      border-radius: 8px;
+      border-radius: 50%;
     }
 
+    .arrow-left { left: 10px; }
+    .arrow-right { right: 10px; }
+
     .form-section {
-      padding: 100px 40px;
+      background: #f5f5f5;
+      padding: 80px 20px;
       display: flex;
-      flex-direction: column;
+      justify-content: center;
       align-items: center;
-      background-color: #f5f5f5;
+      flex-direction: column;
     }
 
     .form-box {
-      background-color: white;
-      padding: 30px;
+      background: white;
+      padding: 40px;
       border-radius: 10px;
       max-width: 500px;
       width: 100%;
@@ -198,34 +168,39 @@
     .form-box h2 {
       font-size: 26px;
       margin-bottom: 20px;
-      font-weight: bold;
       text-align: center;
     }
 
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
     input, textarea {
-      width: 100%;
       padding: 12px;
-      margin-bottom: 15px;
-      font-size: 16px;
-      border-radius: 8px;
       border: 1px solid #ccc;
-      font-weight: bold;
+      border-radius: 8px;
+      font-size: 16px;
     }
 
     button {
-      background-color: black;
-      color: white;
       padding: 12px;
+      background: black;
+      color: white;
+      font-weight: bold;
       border: none;
       border-radius: 8px;
-      font-size: 16px;
       cursor: pointer;
-      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #333;
     }
 
     footer {
       text-align: center;
-      padding: 30px;
+      padding: 20px;
       font-size: 14px;
       color: gray;
     }
@@ -235,104 +210,108 @@
 
   <img class="logo" src="https://i.postimg.cc/S2HvrdjX/IMG-4687.jpg" alt="SHIRYON Logo" />
 
-  <div class="main-container">
-    <!-- 1. INTRO -->
-    <section class="intro-section">
-      <img class="intro-image" src="https://i.postimg.cc/S2HvrdjX/IMG-4687.jpg" alt="Gym Fashion" />
-      <div class="centered-text">
-        <h1>SHIRYON</h1>
-        <p class="latin-tagline">Vidēmus. Ædificāmus. Domināmur.</p>
-        <p class="tagline">We see. We build. We dominate.</p>
-        <p class="coming-soon">Revolutionizing Gym Apparel</p>
-      </div>
-    </section>
+  <!-- Intro Section -->
+  <section class="intro">
+    <img class="intro-image" src="https://i.postimg.cc/S2HvrdjX/IMG-4687.jpg" alt="Intro Image" />
+    <div class="centered-text">
+      <h1>SHIRYON</h1>
+      <p class="latin-tagline">Vidēmus. Ædificāmus. Domināmur.</p>
+      <p class="tagline">We see. We build. We dominate.</p>
+      <p class="coming-soon">Revolutionizing Gym Apparel</p>
+    </div>
+  </section>
 
-    <!-- 2. HORIZONTAL SLIDER -->
-    <section style="position: relative;">
-      <div class="horizontal-slider" id="slider">
-        <!-- Slide 1 -->
-        <section>
-          <div class="section-heading"><span class="number">1</span><span class="line"></span><span>What We’re Building</span></div>
-          <p><span class="highlight">SHIRYON</span> is not another activewear label. We are creating a new category: <span class="highlight">Dedicated Gymwear</span> — apparel engineered for <span class="highlight">squats</span>, <span class="highlight">pulls</span>, and <span class="highlight">presses</span>.</p>
-          <p>The global fitness apparel market (~<span class="highlight">$200 billion</span> by 2028) is saturated — but <span class="highlight">strength-focused athletes</span> remain overlooked.</p>
-          <p>While yoga, running, and lifestyle segments dominate, the <span class="highlight">weight room</span> has been left behind. <span class="highlight">SHIRYON</span> fills that gap.</p>
-        </section>
+  <!-- Horizontal Slider Section -->
+  <section class="horizontal-wrapper">
+    <button class="arrow-btn arrow-left" onclick="scrollSlider(-1)">←</button>
+    <div class="horizontal-slider" id="slider">
+      
+      <!-- Slide 1: What We’re Building -->
+      <section>
+        <div class="section-heading">
+          <span class="number">1</span><span class="line"></span><span>What We’re Building</span>
+        </div>
+        <p><span class="highlight">SHIRYON</span> is not another activewear label. We are creating a new category: <span class="highlight">Dedicated Gymwear</span> — apparel engineered for <span class="highlight">squats</span>, <span class="highlight">pulls</span>, and <span class="highlight">presses</span>.</p>
+        <p>The global fitness apparel market (~<span class="highlight">$200 billion</span> by 2028) is saturated — but <span class="highlight">strength-focused athletes</span> remain overlooked.</p>
+        <p>While yoga, running, and lifestyle segments dominate, the <span class="highlight">weight room</span> has been left behind. <span class="highlight">SHIRYON</span> fills that gap.</p>
+      </section>
 
-        <!-- Slide 2 -->
-        <section>
-          <div class="section-heading"><span class="number">2</span><span class="line"></span><span>Our Strategy</span></div>
-          <p><i>“Our unfair advantage is how we see.”</i> We don’t copy models. We <span class="highlight">create them</span> — with <span class="highlight">storytelling</span>, <span class="highlight">design intelligence</span>, and <span class="highlight">strategic restraint</span>.</p>
-        </section>
+      <!-- Slide 2: Our Strategy -->
+      <section>
+        <div class="section-heading">
+          <span class="number">2</span><span class="line"></span><span>Our Strategy</span>
+        </div>
+        <p><i>“Our unfair advantage is how we see.”</i> We don’t copy models. We <span class="highlight">create them</span> — with <span class="highlight">storytelling</span>, <span class="highlight">design intelligence</span>, and <span class="highlight">strategic restraint</span>.</p>
+      </section>
 
-        <!-- Slide 3 -->
-        <section>
-          <div class="section-heading"><span class="number">3</span><span class="line"></span><span>Three Pillars</span></div>
-          <p><strong>Product Development:</strong> Prototyping with award-winning industrial design firms from Poland.</p>
-          <p><strong>Jedidya Raju</strong> – Founder | Vision Lead – A product thinker with a storyteller’s instinct.</p>
-          <p><strong>Charan A</strong> – Co-Founder | Operations Lead – Translates strategy into production—from concept to delivery.</p>
-          <p><strong>Global Team:</strong> Specialists in biomechanics, apparel engineering, and industrial prototyping.</p>
-        </section>
+      <!-- Slide 3: Three Pillars -->
+      <section>
+        <div class="section-heading">
+          <span class="number">3</span><span class="line"></span><span>Three Pillars</span>
+        </div>
+        <p><strong>Product Development:</strong> Prototyping with award-winning industrial design firms from Poland.</p>
+        <p><strong>Jedidya Raju</strong> – Founder | Vision Lead – A product thinker with a storyteller’s instinct.</p>
+        <p><strong>Charan A</strong> – Co-Founder | Operations Lead – Translates strategy into production—from concept to delivery.</p>
+        <p><strong>Global Team:</strong> Specialists in biomechanics, apparel engineering, and industrial prototyping.</p>
+      </section>
 
-        <!-- Slide 4 -->
-        <section>
-          <div class="section-heading"><span class="number">4</span><span class="line"></span><span>The Exhibition</span></div>
-          <p><strong>Founder’s Vision</strong><br>
-          I don’t build startups.<br>
-          I build what the world didn’t see coming.</p>
-          <p><strong>SHIRYON</strong> isn’t just a brand — it’s a response to everything performance wear forgot.</p>
-          <p>Every venture I pursue begins where convention ends — not because it’s trendy, but because it’s necessary.</p>
-          <p>I operate at the edge of industries — where OJJO’s deep tech meets emotion, and DUOBLT’s travel meets intelligence.</p>
-          <p>If it’s obvious, it’s too late. If it already exists, I’m not interested.</p>
-          <p>SHIRYON is the first of three ventures currently in motion. The others?<br>They’ll make the big players wish they got there first.</p>
-          <p>— Jedidya Raju, Founder, SHIRYON</p>
-        </section>
+      <!-- Slide 4: The Exhibition -->
+      <section>
+        <div class="section-heading">
+          <span class="number">4</span><span class="line"></span><span>The Exhibition</span>
+        </div>
+        <p><strong>Founder’s Vision</strong><br>
+        I don’t build startups.<br>
+        I build what the world didn’t see coming.</p>
+        <p><strong>SHIRYON</strong> isn’t just a brand — it’s a response to everything performance wear forgot.</p>
+        <p>Every venture I pursue begins where convention ends — not because it’s trendy, but because it’s necessary.</p>
+        <p>I operate at the edge of industries — where OJJO’s deep tech meets emotion, and DUOBLT’s travel meets intelligence.</p>
+        <p>If it’s obvious, it’s too late. If it already exists, I’m not interested.</p>
+        <p>SHIRYON is the first of three ventures currently in motion. The others?<br>They’ll make the big players wish they got there first.</p>
+        <p>— Jedidya Raju, Founder, SHIRYON</p>
+      </section>
 
-        <!-- Slide 5 -->
-        <section>
-          <div class="section-heading"><span class="number">5</span><span class="line"></span><span>Contact</span></div>
-          <p>Let’s <span class="highlight">Build the Future</span> of Gymwear.<br>Whether you’re an <span class="highlight">investor</span>, <span class="highlight">collaborator</span>, or <span class="highlight">strategic advisor</span> — let’s connect.</p>
-          <p>Email: <a href="mailto:founders@shiryon.in" style="color: black;">founders@shiryon.in</a></p>
-        </section>
-      </div>
-      <div class="arrows">
-        <button class="arrow" onclick="scrollSlider(-1)">←</button>
-        <button class="arrow" onclick="scrollSlider(1)">→</button>
-      </div>
-    </section>
+      <!-- Slide 5: Contact -->
+      <section>
+        <div class="section-heading">
+          <span class="number">5</span><span class="line"></span><span>Contact</span>
+        </div>
+        <p>Let’s <span class="highlight">Build the Future</span> of Gymwear.<br>Whether you’re an <span class="highlight">investor</span>, <span class="highlight">collaborator</span>, or <span class="highlight">strategic advisor</span> — let’s connect.</p>
+        <p>Email: <a href="mailto:founders@shiryon.in">founders@shiryon.in</a></p>
+      </section>
 
-    <!-- 3. FORM SECTION -->
-    <section class="form-section">
-      <div class="form-box">
-        <h2>Get In Touch <span class="gap-note">We saw the gap</span></h2>
-        <form method="POST" action="https://formspree.io/f/xzzeyjpd">
-          <input type="text" name="first-name" placeholder="First Name" required />
-          <input type="text" name="last-name" placeholder="Last Name" required />
-          <input type="email" name="email" placeholder="Email Address" required />
-          <input type="tel" name="contact-number" placeholder="Contact Number" required />
-          <textarea name="message" placeholder="Message" required></textarea>
-          <button type="submit">Submit</button>
-        </form>
-      </div>
-    </section>
-  </div>
+    </div>
+    <button class="arrow-btn arrow-right" onclick="scrollSlider(1)">→</button>
+  </section>
+
+  <!-- Registration Form Section -->
+  <section class="form-section">
+    <div class="form-box">
+      <h2>Get In Touch <span style="font-size: 14px; color: gray;">We saw the gap</span></h2>
+      <form method="POST" action="https://formspree.io/f/xzzeyjpd">
+        <input type="text" name="first-name" placeholder="First Name" required />
+        <input type="text" name="last-name" placeholder="Last Name" required />
+        <input type="email" name="email" placeholder="Email Address" required />
+        <input type="tel" name="contact-number" placeholder="Contact Number" required />
+        <textarea name="message" placeholder="Message" required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </section>
 
   <footer>
     SHIRYON TEXTILES PVT LTD, Plot 326, TNGO’s Colony Phase 2, Gachibowli, Hyderabad, India – 500032
   </footer>
 
   <script>
-    document.body.style.backgroundColor = 'black';
     setTimeout(() => {
       document.body.classList.add('reveal');
     }, 1000);
-    setTimeout(() => {
-      document.body.style.backgroundColor = 'white';
-    }, 6000);
 
     function scrollSlider(direction) {
-      const slider = document.getElementById("slider");
+      const slider = document.getElementById('slider');
       const width = slider.offsetWidth;
-      slider.scrollBy({ left: direction * width, behavior: "smooth" });
+      slider.scrollBy({ left: width * direction, behavior: 'smooth' });
     }
   </script>
 </body>
