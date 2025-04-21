@@ -160,18 +160,6 @@
       background: white;
     }
 
-    .combined-contact-form .section-heading {
-      margin-bottom: 40px;
-    }
-
-    .combined-contact-form p {
-      font-size: 18px;
-      line-height: 1.6;
-      max-width: 700px;
-      margin-bottom: 10px;
-      text-align: center;
-    }
-
     .form-box {
       background: #fff;
       padding: 40px;
@@ -179,13 +167,18 @@
       max-width: 500px;
       width: 100%;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      margin-top: 40px;
     }
 
     .form-box h2 {
       font-size: 26px;
       margin-bottom: 20px;
       text-align: center;
+    }
+
+    .form-box p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 14px;
     }
 
     form {
@@ -238,7 +231,7 @@
     </div>
   </section>
 
-  <!-- Horizontal Slider Section -->
+  <!-- Horizontal Slider Section (Removed Contact Slide) -->
   <section class="horizontal-wrapper">
     <button class="arrow-btn arrow-left" onclick="scrollSlider(-1)">←</button>
     <div class="horizontal-slider" id="slider">
@@ -283,17 +276,19 @@
     <button class="arrow-btn arrow-right" onclick="scrollSlider(1)">→</button>
   </section>
 
-  <!-- Combined Contact + Form -->
+  <!-- Contact Section (Text placed after heading) -->
   <section class="combined-contact-form">
-    <div class="section-heading">
-      <span class="number">5</span><span class="line"></span><span>Contact</span>
-    </div>
-    <p>Let’s <span class="highlight">Build the Future</span> of Gymwear.<br>
-    Whether you’re an <span class="highlight">investor</span>, <span class="highlight">collaborator</span>, or <span class="highlight">strategic advisor</span> — let’s connect.</p>
-    <p>Email: <a href="mailto:founders@shiryon.in">founders@shiryon.in</a></p>
-
     <div class="form-box">
       <h2>Get In Touch <span style="font-size: 14px; color: gray;">We saw the gap</span></h2>
+
+      <p style="text-align: center; margin-bottom: 24px;">
+        Let’s <span class="highlight">Build the Future</span> of Gymwear.<br>
+        Whether you’re an <span class="highlight">investor</span>, <span class="highlight">collaborator</span>, or <span class="highlight">strategic advisor</span> — let’s connect.
+      </p>
+      <p style="text-align: center; margin-bottom: 40px;">
+        Email: <a href="mailto:founders@shiryon.in">founders@shiryon.in</a>
+      </p>
+
       <form method="POST" action="https://formspree.io/f/xzzeyjpd">
         <input type="text" name="first-name" placeholder="First Name" required />
         <input type="text" name="last-name" placeholder="Last Name" required />
