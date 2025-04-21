@@ -1,19 +1,24 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SHIRYON | Revolutionizing Gymwear</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet"/>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html, body {
       height: 100%;
       font-family: 'Orbitron', sans-serif;
       scroll-behavior: smooth;
-      background: white;
+      background: black;
       color: black;
       overflow-x: hidden;
+      transition: background-color 1s ease;
+    }
+
+    .white-bg {
+      background-color: white;
     }
 
     .logo {
@@ -31,7 +36,6 @@
     }
 
     section {
-      height: 100vh;
       width: 100vw;
     }
 
@@ -39,9 +43,10 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      position: relative;
+      height: 100vh;
       background-color: black;
       color: white;
+      position: relative;
     }
 
     .intro-image {
@@ -87,22 +92,21 @@
       display: flex;
       height: 100%;
       width: 100%;
-      overflow-x: hidden;
+      overflow-x: auto;
       scroll-snap-type: x mandatory;
       scroll-behavior: smooth;
     }
 
     .horizontal-slider section {
       flex: 0 0 100vw;
-      min-width: 100vw;
       height: 100vh;
       scroll-snap-align: start;
-      padding: 60px;
       box-sizing: border-box;
+      padding: 80px 60px 60px;
       overflow-y: auto;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
     }
 
     .section-heading {
@@ -148,22 +152,34 @@
     .arrow-left { left: 10px; }
     .arrow-right { right: 10px; }
 
-    .form-section {
-      background: #f5f5f5;
-      padding: 80px 20px;
+    .combined-contact-form {
       display: flex;
-      justify-content: center;
-      align-items: center;
       flex-direction: column;
+      align-items: center;
+      padding: 80px 20px;
+      background: white;
+    }
+
+    .combined-contact-form .section-heading {
+      margin-bottom: 40px;
+    }
+
+    .combined-contact-form p {
+      font-size: 18px;
+      line-height: 1.6;
+      max-width: 700px;
+      margin-bottom: 10px;
+      text-align: center;
     }
 
     .form-box {
-      background: white;
+      background: #fff;
       padding: 40px;
       border-radius: 10px;
       max-width: 500px;
       width: 100%;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-top: 40px;
     }
 
     .form-box h2 {
@@ -204,11 +220,11 @@
       padding: 20px;
       font-size: 14px;
       color: gray;
+      background: white;
     }
   </style>
 </head>
 <body>
-
   <img class="logo" src="https://i.postimg.cc/S2HvrdjX/IMG-4687.jpg" alt="SHIRYON Logo" />
 
   <!-- Intro Section -->
@@ -226,8 +242,6 @@
   <section class="horizontal-wrapper">
     <button class="arrow-btn arrow-left" onclick="scrollSlider(-1)">←</button>
     <div class="horizontal-slider" id="slider">
-      
-      <!-- Slide 1 -->
       <section>
         <div class="section-heading">
           <span class="number">1</span><span class="line"></span><span>What We’re Building</span>
@@ -236,16 +250,12 @@
         <p>The global fitness apparel market (~<span class="highlight">$200 billion</span> by 2028) is saturated — but <span class="highlight">strength-focused athletes</span> remain overlooked.</p>
         <p>While yoga, running, and lifestyle segments dominate, the <span class="highlight">weight room</span> has been left behind. <span class="highlight">SHIRYON</span> fills that gap.</p>
       </section>
-
-      <!-- Slide 2 -->
       <section>
         <div class="section-heading">
           <span class="number">2</span><span class="line"></span><span>Our Strategy</span>
         </div>
         <p><i>“Our unfair advantage is how we see.”</i> We don’t copy models. We <span class="highlight">create them</span> — with <span class="highlight">storytelling</span>, <span class="highlight">design intelligence</span>, and <span class="highlight">strategic restraint</span>.</p>
       </section>
-
-      <!-- Slide 3 -->
       <section>
         <div class="section-heading">
           <span class="number">3</span><span class="line"></span><span>Three Pillars</span>
@@ -255,8 +265,6 @@
         <p><strong>Charan A</strong> – Co-Founder | Operations Lead – Translates strategy into production—from concept to delivery.</p>
         <p><strong>Global Team:</strong> Specialists in biomechanics, apparel engineering, and industrial prototyping.</p>
       </section>
-
-      <!-- Slide 4 -->
       <section>
         <div class="section-heading">
           <span class="number">4</span><span class="line"></span><span>The Exhibition</span>
@@ -271,22 +279,19 @@
         <p>SHIRYON is the first of three ventures currently in motion. The others?<br>They’ll make the big players wish they got there first.</p>
         <p>— Jedidya Raju, Founder, SHIRYON</p>
       </section>
-
-      <!-- Slide 5 -->
-      <section>
-        <div class="section-heading">
-          <span class="number">5</span><span class="line"></span><span>Contact</span>
-        </div>
-        <p>Let’s <span class="highlight">Build the Future</span> of Gymwear.<br>Whether you’re an <span class="highlight">investor</span>, <span class="highlight">collaborator</span>, or <span class="highlight">strategic advisor</span> — let’s connect.</p>
-        <p>Email: <a href="mailto:founders@shiryon.in">founders@shiryon.in</a></p>
-      </section>
-
     </div>
     <button class="arrow-btn arrow-right" onclick="scrollSlider(1)">→</button>
   </section>
 
-  <!-- Contact Form -->
-  <section class="form-section">
+  <!-- Combined Contact + Form -->
+  <section class="combined-contact-form">
+    <div class="section-heading">
+      <span class="number">5</span><span class="line"></span><span>Contact</span>
+    </div>
+    <p>Let’s <span class="highlight">Build the Future</span> of Gymwear.<br>
+    Whether you’re an <span class="highlight">investor</span>, <span class="highlight">collaborator</span>, or <span class="highlight">strategic advisor</span> — let’s connect.</p>
+    <p>Email: <a href="mailto:founders@shiryon.in">founders@shiryon.in</a></p>
+
     <div class="form-box">
       <h2>Get In Touch <span style="font-size: 14px; color: gray;">We saw the gap</span></h2>
       <form method="POST" action="https://formspree.io/f/xzzeyjpd">
@@ -307,7 +312,8 @@
   <script>
     setTimeout(() => {
       document.body.classList.add('reveal');
-    }, 1000);
+      document.body.classList.add('white-bg');
+    }, 7000);
 
     function scrollSlider(direction) {
       const slider = document.getElementById('slider');
