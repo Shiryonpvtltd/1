@@ -53,7 +53,12 @@
       justify-content: center;
       align-items: center;
       position: relative;
-      background: transparent;
+      background-color: black;
+      transition: background-color 1s ease;
+    }
+
+    .intro.white-bg {
+      background-color: white !important;
     }
 
     .intro-image {
@@ -177,11 +182,12 @@
 </head>
 
 <body>
-  <img class="logo" src="https://i.postimg.cc/S2HvrdjX/IMG-4687.jpg" alt="SHIRYON Logo" />
+  <!-- Logo -->
+  <img class="logo" src="https://i.postimg.cc/Cdtz317R/new-logo.jpg" alt="SHIRYON Logo" />
 
   <!-- Intro Section -->
   <section class="intro">
-    <img class="intro-image" src="https://i.postimg.cc/S2HvrdjX/IMG-4687.jpg" alt="Intro Image" />
+    <img class="intro-image" src="https://i.postimg.cc/Cdtz317R/new-logo.jpg" alt="Intro Image" />
     <div class="centered-text">
       <h1>SHIRYON</h1>
       <p class="latin-tagline">Vidēmus. Ædificāmus. Domināmur.</p>
@@ -239,7 +245,6 @@
   <section class="combined-contact-form">
     <div class="form-box">
       <h2>Get In Touch <span style="font-size: 14px; color: gray;">We saw the gap</span></h2>
-
       <p style="text-align: center; margin-bottom: 24px;">
         Let’s <span class="highlight">Build the Future</span> of Gymwear.<br>
         Whether you’re an <span class="highlight">investor</span>, <span class="highlight">collaborator</span>, or <span class="highlight">strategic advisor</span> — let’s connect.
@@ -247,7 +252,6 @@
       <p style="text-align: center; margin-bottom: 40px;">
         Email: <a href="mailto:founders@shiryon.in">founders@shiryon.in</a>
       </p>
-
       <form method="POST" action="https://formspree.io/f/xzzeyjpd">
         <input type="text" name="first-name" placeholder="First Name" required />
         <input type="text" name="last-name" placeholder="Last Name" required />
@@ -266,6 +270,7 @@
   <script>
     setTimeout(() => {
       document.body.classList.add('reveal');
+      document.querySelector('.intro').classList.add('white-bg');
     }, 7000);
   </script>
 </body>
