@@ -8,22 +8,21 @@ import Navbar from './components/layout/Navbar';
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [showLogo, setShowLogo] = useState(false);
-
+  // const [showLogo, setShowLogo] = useState(false);
+  
   useEffect(() => {
     // Simulate initial loading
     const loaderTimer = setTimeout(() => {
       setIsLoading(false);
     }, 2000);
 
-    // Show fixed logo after intro animation completes
-    const logoTimer = setTimeout(() => {
-      setShowLogo(true);
-    }, 6000);
+    // const logoTimer = setTimeout(() => {
+    //   setShowLogo(true);
+    // }, 6000);
 
     return () => {
       clearTimeout(loaderTimer);
-      clearTimeout(logoTimer);
+      // clearTimeout(logoTimer);
     };
   }, []);
 

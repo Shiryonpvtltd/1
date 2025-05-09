@@ -1,5 +1,5 @@
-import React, { useRef, useEffect } from 'react';
-import { motion, useScroll, useTransform, useSpring, useInView } from 'framer-motion';
+import { useRef } from 'react';
+import { motion,   useInView } from 'framer-motion';
 // Project data with placeholder images
 const projects = [
   {
@@ -82,13 +82,13 @@ const teamMembers = [
     id: 1,
     name: "Jedidya Raju",
     role: "Founder",
-    image: "https://avatar.iran.liara.run/public/41"
+    image: "/images/profile1.png"
   },
   {
     id: 2,
     name: "Charan A",
     role: "Co-Founder",
-    image: "https://avatar.iran.liara.run/public/38"
+    image: "/images/profile1.png"
   },
 
 ];
@@ -114,7 +114,7 @@ const TeamMemberCard = ({ member }: { member: TeamMember }) => {
       transition={{ duration: 0.5 }}
       whileHover={{ y: -10 }}
     >
-      <div className="relative h-64 overflow-hidden">
+      <div className="relative h-64 overflow-hidden flex">
         <img 
           src={member.image} 
           alt={member.name}
@@ -134,14 +134,8 @@ const TeamMemberCard = ({ member }: { member: TeamMember }) => {
 const WhatWEBuildSection = () => {
   const sectionRef = useRef(null);
   const headerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"]
-  });
 
-  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.8, 1, 1, 0.8]);
-  const springScale = useSpring(scale, { stiffness: 100, damping: 30 });
+
   
   const headerInView = useInView(headerRef, { once: false, amount: 0.3 });
 
@@ -215,7 +209,7 @@ const WhatWEBuildSection = () => {
             The talented professionals behind our exceptional work
           </motion.p>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="flex flex-wrap justify-center gap-8">
             {teamMembers.map(member => (
               <TeamMemberCard key={member.id} member={member} />
             ))}

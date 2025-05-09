@@ -1,7 +1,6 @@
 // src/pages/Home.tsx
 import IntroSection from '../components/sections/IntroSection';
 import WhatWeBuildSection from '../components/sections/WhatWeBuildSection';
-import StrategySection from '../components/sections/StrategySection';
 // import ThreePillarsSection from '../components/sections/ThreePillarsSection';
 // import ExhibitionSection from '../components/sections/ExhibitionSection';
 import Vision from '../components/sections/Vision';
