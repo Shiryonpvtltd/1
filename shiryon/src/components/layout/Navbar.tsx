@@ -76,7 +76,7 @@ const Navbar = () => {
 
         {/* Hamburger */}
         <button
-          className={`w-12 h-12 rounded-full flex flex-col justify-center items-center z-20 transition-colors duration-300 overflow-visible ${
+          className={`w-12 h-12 rounded-full flex flex-col justify-center items-center z-30 transition-colors duration-300 overflow-visible ${
             isOpen ? '' : 'gap-1'
           } ${scrolled || isOpen ? 'bg-red-500' : 'bg-black bg-opacity-50'}`}
           onClick={() => setIsOpen(!isOpen)}
