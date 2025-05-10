@@ -9,9 +9,9 @@ type NavItem = {
 
 const navItems: NavItem[] = [
   { name: 'What We Build', href: '#what-we-build' },
-  { name: 'Our Goal', href: '#whatwearebuilding' },
+  { name: 'Our Goal', href: '#Whatwearebuilding' },
   { name: 'Our Statergy', href: '#ourstatergy' },
-  { name: 'Thee Pillars', href: '#threepillars' },
+  { name: 'Three Pillars', href: '#threepillars' },
   { name: 'Our Vision', href: '#vision' },
   { name: 'Contact', href: '#contact' },
 ];
@@ -65,7 +65,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="fixed top-0 right-0 w-full z-40">
+    <header className="fixed top-0 right-0 w-full z-20">
       {/* Compact Glossy Navbar */}
       <div className="w-full h-18 flex items-center justify-between px-4 md:px-8 backdrop-blur-xl bg-white/10 border-b border-white/20 shadow-md">
         {/* Logo */}
@@ -76,7 +76,7 @@ const Navbar = () => {
 
         {/* Hamburger */}
         <button
-          className={`w-12 h-12 rounded-full flex flex-col justify-center items-center z-50 transition-colors duration-300 overflow-visible ${
+          className={`w-12 h-12 rounded-full flex flex-col justify-center items-center z-20 transition-colors duration-300 overflow-visible ${
             isOpen ? '' : 'gap-1'
           } ${scrolled || isOpen ? 'bg-red-500' : 'bg-black bg-opacity-50'}`}
           onClick={() => setIsOpen(!isOpen)}
@@ -104,7 +104,7 @@ const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.nav
-            className="fixed inset-0 bg-white/10 backdrop-blur-2xl border border-white/10 flex flex-col justify-center items-center z-40"
+            className="fixed inset-0 bg-white/10 backdrop-blur-2xl border border-white/10 flex flex-col justify-center items-center z-10"
             initial="closed"
             animate="open"
             exit="closed"

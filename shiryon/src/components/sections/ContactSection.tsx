@@ -214,7 +214,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="font-medium text-white">Location</h4>
-                    <p className="text-gray-400 mt-1">HIRYON TEXTILES PVT LTD, Plot 326, TNGO’s Colony Phase 2, Gachibowli, Hyderabad, India – 500032</p>
+                    <p className="text-gray-400 mt-1">SHIRYON TEXTILES PVT LTD, Plot 326, TNGO’s Colony Phase 2, Gachibowli, Hyderabad, India – 500032</p>
                   </div>
                 </motion.div>
                 

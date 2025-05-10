@@ -5,7 +5,7 @@ const WhatWeAreBuilding = () => {
   return (
     <section className="min-h-screen bg-black text-white flex items-center justify-center px-4 py-24 relative">
       {/* Big number "2" */}
-      <div className="absolute left-0 text-9xl text-red-600 font-bold z-10">1</div>
+      <div className="absolute left-0 text-9xl text-red-600 font-bold ">1</div>
 
       <motion.div
         className="max-w-3xl w-full bg-red-950 bg-opacity-10 p-8 rounded-xl text-center shadow-lg"

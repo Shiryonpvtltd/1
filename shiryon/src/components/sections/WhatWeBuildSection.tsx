@@ -53,7 +53,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
         <div className="absolute inset-0 " />
       </div>
       
-      <div className="w-full md:w-2/5 p-6 md:p-8 bg-black text-white z-10">
+      <div className="w-full md:w-2/5 p-6 md:p-8 bg-black text-white ">
         <motion.h3 
           className="text-2xl md:text-3xl font-bold mb-2 text-red-600"
           initial={{ opacity: 0, x: -20 }}

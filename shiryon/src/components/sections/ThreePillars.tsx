@@ -5,7 +5,7 @@ const ThreePillars = () => {
   return (
     <section className="min-h-screen bg-black text-white flex items-center justify-center px-4 py-24 relative">
       {/* Big number "1" */}
-      <div className="absolute left-0 text-9xl text-red-600 font-bold z-10">3</div>
+      <div className="absolute left-0 text-9xl text-red-600 font-bold ">3</div>
 
       <motion.div
         className="max-w-3xl w-full bg-red-950 bg-opacity-10 p-8 rounded-xl text-center shadow-lg"

@@ -4,7 +4,7 @@ const Vision = () => {
   return (
 <section className="min-h-screen bg-black text-white flex items-center justify-center px-4 py-24 relative">
       {/* Big number "3" */}
-      <div className="absolute left-0 text-9xl text-red-600 font-bold z-10">4</div>      <motion.div
+      <div className="absolute left-0 text-9xl text-red-600 font-bold ">4</div>      <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
